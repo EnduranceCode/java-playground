@@ -15,3 +15,9 @@ The second course will introduce the student to some of the most powerful progra
 All the code written while taking the above mentioned courses will be stored in different branches of this repository. This approach is taken in order avoid having this GitHub account bloated and cluttered with many repositories holding very small projects.
 
 Throughout these courses, [NetBeans](https://netbeans.org) is the IDE that the Udacity instructors use and recommend. [NetBeans](https://netbeans.org) will no be used in the coding tasks of these two courses because the goal is to gain more proficiency with [Eclipse](https://www.eclipse.org) and therefore, all the necessary code will be written with [Eclipse](https://www.eclipse.org).
+
+## Java Programming Basics
+
+### Tic Tac Toe Project
+
+The code written while developing the Tic Tac Toe Project is stored in the branch [basics/tic-tac-toe](https://github.com/EnduranceCode/JavaUdacity/tree/basics/tic-tac-toe).
