@@ -87,5 +87,9 @@ public class Wrappers {
 		System.out.println(doubleValue.floatValue());
 		System.out.println(doubleValue.doubleValue());
 		System.out.println();
+		
+		System.out.println("valueOf() overload");
+		System.out.println(Boolean.valueOf(true));
+		System.out.println(Boolean.valueOf("true"));
 	}
 }
