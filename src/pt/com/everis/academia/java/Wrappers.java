@@ -1,6 +1,11 @@
 package pt.com.everis.academia.java;
 
 public class Wrappers {
+	
+	/* Wrappers class can't be extended
+	 * Compile error
+	 * public class AcademiaFloat extends Float {}
+	 */
 
 	public static void main(String[] args) {
 		Boolean boleanValue = new Boolean(true);
