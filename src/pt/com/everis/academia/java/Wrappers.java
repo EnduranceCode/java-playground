@@ -15,8 +15,8 @@ public class Wrappers {
 		Double doubleValue = new Double(3.14);
 		System.out.println(doubleValue);
 		
-		Float floatValues = new Float(3.14f);
-		System.out.println(floatValues);
+		Float floatValue = new Float(3.14f);
+		System.out.println(floatValue);
 		
 		Integer intValue = new Integer(3);
 		System.out.println(intValue);
@@ -26,5 +26,61 @@ public class Wrappers {
 		
 		Short shortValue = new Short((short) 4);
 		System.out.println(shortValue);
+		
+		System.out.println();
+		
+		System.out.println("Byte: Conversion methods output");
+		System.out.println(byteValue.byteValue());
+		System.out.println(byteValue.shortValue());
+		System.out.println(byteValue.intValue());
+		System.out.println(byteValue.longValue());
+		System.out.println(byteValue.floatValue());
+		System.out.println(byteValue.doubleValue());
+		System.out.println();
+		
+		System.out.println("Short: Conversion methods output");
+		System.out.println(shortValue.byteValue());
+		System.out.println(shortValue.shortValue());
+		System.out.println(shortValue.intValue());
+		System.out.println(shortValue.longValue());
+		System.out.println(shortValue.floatValue());
+		System.out.println(shortValue.doubleValue());
+		System.out.println();
+		
+		System.out.println("Integer: Conversion methods output");
+		System.out.println(intValue.byteValue());
+		System.out.println(intValue.shortValue());
+		System.out.println(intValue.intValue());
+		System.out.println(intValue.longValue());
+		System.out.println(intValue.floatValue());
+		System.out.println(intValue.doubleValue());
+		System.out.println();
+		
+		System.out.println("Long: Conversion methods output");
+		System.out.println(longValue.byteValue());
+		System.out.println(longValue.shortValue());
+		System.out.println(longValue.intValue());
+		System.out.println(longValue.longValue());
+		System.out.println(longValue.floatValue());
+		System.out.println(longValue.doubleValue());
+		System.out.println();
+		
+		System.out.println("Float: Conversion methods output");
+		System.out.println(floatValue.byteValue());
+		System.out.println(floatValue.shortValue());
+		System.out.println(floatValue.intValue());
+		System.out.println(floatValue.longValue());
+		System.out.println(floatValue.floatValue());
+		System.out.println(floatValue.doubleValue());
+		System.out.println();
+		
+		System.out.println("Double: Conversion methods output");
+		System.out.println(doubleValue.byteValue());
+		System.out.println(doubleValue.shortValue());
+		System.out.println(doubleValue.intValue());
+		System.out.println(doubleValue.longValue());
+		System.out.println(doubleValue.floatValue());
+		System.out.println(doubleValue.doubleValue());
+		System.out.println();
 	}
 }
