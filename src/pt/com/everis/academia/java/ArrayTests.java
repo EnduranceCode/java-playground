@@ -28,5 +28,9 @@ public class ArrayTests {
 		Arrays.sort(array2);
 		
 		System.out.println(Arrays.toString(array2));
+		
+		int[] newArray = Arrays.copyOfRange(array, 1, 3);
+		
+		System.out.println(Arrays.toString(newArray));
 	}
 }
