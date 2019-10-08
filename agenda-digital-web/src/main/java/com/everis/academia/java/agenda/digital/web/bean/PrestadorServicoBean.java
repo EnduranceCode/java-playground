@@ -275,7 +275,7 @@ public class PrestadorServicoBean {
 	 * @param prestadorServico
 	 * @return
 	 */
-	public String navegarReadPrestadorServiço(PrestadorServico prestadorServico) {
+	public String navegarReadPrestadorServico(PrestadorServico prestadorServico) {
 
 		this.prestadorServico = prestadorServico;
 
