@@ -64,6 +64,7 @@ public class Main extends Application {
                 actiontarget.setText("Sign in button pressed");
             }
         });
+
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
@@ -75,6 +76,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(grid, 300, 275);
         primaryStage.setScene(scene);
+        scene.getStylesheets().add(Main.class.getResource("login.css").toExternalForm());
 
         primaryStage.show();
     }
