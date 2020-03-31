@@ -50,6 +50,9 @@ public class Main extends Application {
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
 
+        final Text actiontarget = new Text();
+        grid.add(actiontarget, 1, 6);
+
         Scene scene = new Scene(grid, 300, 275);
         primaryStage.setScene(scene);
 
