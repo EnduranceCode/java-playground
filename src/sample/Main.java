@@ -42,6 +42,8 @@ public class Main extends Application {
 
         grid.add(pwBox, 1, 2);
 
+        grid.setGridLinesVisible(true);
+
         Scene scene = new Scene(grid, 300, 275);
         primaryStage.setScene(scene);
 
