@@ -11,6 +11,7 @@
     <padding>
         <Insets top="25" right="25" bottom="10" left="25"/>
     </padding>
+    <gridLinesVisible>true</gridLinesVisible>
 
     <Text GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
         <text>Welcome</text>
