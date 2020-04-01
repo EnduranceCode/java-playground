@@ -1,7 +1,11 @@
 package tutorial;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.BoxBlur;
@@ -13,6 +17,9 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import static java.lang.Math.random;
 
 public class ColorfulCircles extends Application {
 
@@ -51,6 +58,22 @@ public class ColorfulCircles extends Application {
         colors.setBlendMode(BlendMode.OVERLAY);
         root.getChildren().add(blendModeGroup);
         circles.setEffect(new BoxBlur(10, 10, 3));
+
+        Timeline timeline = new Timeline();
+        for (Node circle : circles.getChildren()) {
+            timeline.getKeyFrames().addAll(
+                    new KeyFrame(Duration.ZERO, // set start position at 0
+                            new KeyValue(circle.translateXProperty(), random() * 800),
+                            new KeyValue(circle.translateYProperty(), random() * 600)
+                    ),
+                    new KeyFrame(new Duration(40000), // set end position at 40s
+                            new KeyValue(circle.translateXProperty(), random() * 800),
+                            new KeyValue(circle.translateYProperty(), random() * 600)
+                    )
+            );
+        }
+        // play 40s of animation
+        timeline.play();
 
         primaryStage.show();
     }
