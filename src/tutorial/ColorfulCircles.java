@@ -3,6 +3,7 @@ package tutorial;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.StrokeType;
@@ -29,6 +30,8 @@ public class ColorfulCircles extends Application {
             circles.getChildren().add(circle);
         }
         root.getChildren().add(circles);
+
+        circles.setEffect(new BoxBlur(10, 10, 3));
 
         primaryStage.show();
     }
