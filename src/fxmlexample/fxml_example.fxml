@@ -9,6 +9,22 @@
 <GridPane fx:controller="fxmlexample.FXMLExampleController"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <padding>
-        <Insets top="25" right="25" bottom="10" left="25" />
+        <Insets top="25" right="25" bottom="10" left="25"/>
     </padding>
+
+    <Text GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+        <text>Welcome</text>
+    </Text>
+
+    <Label GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <text>User Name:</text>
+    </Label>
+
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <text>Password:</text>
+    </Label>
+
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 </GridPane>
