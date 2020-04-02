@@ -1,0 +1,8 @@
+.root {
+    -fx-background-color: #2196f3;
+}
+
+.header,
+.body {
+    -fx-background-color: #ffecb3;
+}
