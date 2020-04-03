@@ -34,7 +34,8 @@
         <Text fx:id="outputHeaderTextFieldValue" GridPane.rowIndex="0" GridPane.columnIndex="0"
               GridPane.columnSpan="3"/>
 
-        <Button text="Print" GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="200"/>
+        <Button text="Print" onAction="#bodyPrintButtonAction" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                prefWidth="200"/>
         <Button text="Next" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="200"/>
         <Button text="Checkbox" GridPane.rowIndex="1" GridPane.columnIndex="2" prefWidth="200"/>
     </GridPane>
