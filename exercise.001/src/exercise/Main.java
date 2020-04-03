@@ -1,4 +1,4 @@
-package exercise.one;
+package exercise;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("JavaFX Exercise One");
 
-        Parent root = FXMLLoader.load(getClass().getResource("exercise_one.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("one/one.fxml"));
 
         Scene firstScene = new Scene(root, 800, 600);
 

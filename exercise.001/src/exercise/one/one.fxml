@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 <?import java.net.URL?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="exercise.one.Controller" spacing="25" styleClass="root">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="exercise.one.OnePresenter" spacing="25" styleClass="root">
     <padding>
         <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
 
     <stylesheets>
-        <URL value="@exercise.css"/>
+        <URL value="@one.css"/>
     </stylesheets>
 
     <HBox xmlns:fx="http://javafx.com/fxml" spacing="15" styleClass="header">

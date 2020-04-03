@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class Controller {
+public class OnePresenter {
     @FXML
     private TextField headerTextField;
     @FXML
