@@ -10,12 +10,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("JavaFX Exercise One");
+
         Parent root = FXMLLoader.load(getClass().getResource("exercise_one.fxml"));
 
         Scene firstScene = new Scene(root, 800, 600);
 
         primaryStage.setScene(firstScene);
-
         primaryStage.show();
     }
 
