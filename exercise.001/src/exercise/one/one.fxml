@@ -31,12 +31,15 @@
             <ColumnConstraints percentWidth="33.0" halignment="CENTER"/>
         </columnConstraints>
 
-        <Text fx:id="outputHeaderTextFieldValue" GridPane.rowIndex="0" GridPane.columnIndex="0"
-              GridPane.columnSpan="3"/>
+        <Text fx:id="bodyText" visible="true"
+              GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+        <CheckBox fx:id="bodyCheckbox" onAction="#bodyCheckboxSelectedAction" visible="false"
+                  GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
 
-        <Button text="Print" onAction="#bodyPrintButtonAction" GridPane.rowIndex="1" GridPane.columnIndex="0"
-                prefWidth="200"/>
+        <Button text="Print" onAction="#bodyPrintButtonAction" prefWidth="200"
+                GridPane.rowIndex="1" GridPane.columnIndex="0"/>
         <Button text="Next" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="200"/>
-        <Button text="Checkbox" GridPane.rowIndex="1" GridPane.columnIndex="2" prefWidth="200"/>
+        <Button fx:id="checkboxButton" text="Checkbox" onAction="#bodyCheckboxButtonAction" prefWidth="200"
+                GridPane.rowIndex="1" GridPane.columnIndex="2"/>
     </GridPane>
 </VBox>
