@@ -21,8 +21,14 @@ public class OnePresenter {
 
     @FXML
     protected void headerSubmitButtonAction() {
+        if (headerTextField.getText().isEmpty()) {
+            showEmptyTextFieldPopUpWarning();
+            return;
+        }
+
         bodyText.setText(headerTextField.getText());
         bodyCheckbox.setText(headerTextField.getText());
+        headerTextField.clear();
     }
 
     @FXML
@@ -42,6 +48,10 @@ public class OnePresenter {
 
     @FXML
     protected void bodyCheckboxButtonAction() {
+        if (bodyText.getText().isEmpty()) {
+            showEmptyTextFieldPopUpWarning();
+            return;
+        }
 
         if (isCheckbox) {
             checkboxButton.setText("Label");
@@ -54,5 +64,12 @@ public class OnePresenter {
             bodyText.setVisible(Boolean.TRUE);
             isCheckbox = Boolean.TRUE;
         }
+    }
+
+    private void showEmptyTextFieldPopUpWarning() {
+        Alert alertPopUp = new Alert(Alert.AlertType.WARNING);
+        alertPopUp.setTitle("There is no text written!");
+        alertPopUp.setHeaderText("Please write some text");
+        alertPopUp.showAndWait();
     }
 }

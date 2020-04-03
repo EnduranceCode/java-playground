@@ -15,7 +15,7 @@
             <Insets top="25" right="25" bottom="25" left="25"/>
         </padding>
 
-        <TextField fx:id="headerTextField" text="Write some text..." minWidth="300" prefWidth="300"/>
+        <TextField fx:id="headerTextField" promptText="Write some text..." minWidth="300" prefWidth="300"/>
 
         <Button text="Submit" onAction="#headerSubmitButtonAction" minWidth="100" prefWidth="100"/>
     </HBox>
