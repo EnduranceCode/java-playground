@@ -2,11 +2,13 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import java.net.URL?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="exercise.one.Controller" styleClass="root" spacing="25">
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="exercise.one.Controller" spacing="25" styleClass="root">
     <padding>
         <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
@@ -15,12 +17,14 @@
         <URL value="@exercise.css"/>
     </stylesheets>
 
-    <HBox xmlns:fx="http://javafx.com/fxml" alignment="center" styleClass="header">
+    <HBox xmlns:fx="http://javafx.com/fxml" spacing="15" styleClass="header">
         <padding>
             <Insets top="25" right="25" bottom="25" left="25"/>
         </padding>
 
-        <Label text="Header"/>
+        <TextField fx:id="textField" text="Write some text..." minWidth="300" prefWidth="300"/>
+
+        <Button text="Submit" minWidth="100" prefWidth="100"/>
     </HBox>
 
     <GridPane xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10"
