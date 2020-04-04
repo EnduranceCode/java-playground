@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.TilePane?>
-<TilePane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" orientation="HORIZONTAL">
-    <Button text="Button One"/>
-    <Button text="Button Two"/>
-    <Button text="Button Three"/>
-    <Button text="Button Four"/>
-    <Button text="Button Five"/>
-    <Button text="Button Six"/>
-    <Button text="Button Seven"/>
-    <Button text="Button Eight"/>
-    <Button text="Button Nine"/>
-    <Button text="Button Ten"/>
-</TilePane>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<StackPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+    <Label text="The first label text that I will make very long" style="-fx-background-color: green;"/>
+    <Button text="Button One" style="-fx-background-color: yellow;"/>
+    <Label text="The second label text" style="-fx-background-color: red;"/>
+</StackPane>
