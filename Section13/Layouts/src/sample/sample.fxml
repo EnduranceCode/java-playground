@@ -4,7 +4,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <Label text="This label is in the top position" BorderPane.alignment="CENTER"
+               style="-fx-border-width: 3px; -fx-border-color: blue; -fx-border-style: dashed;"/>
+    </top>
+
     <bottom>
         <HBox spacing="10" alignment="BASELINE_RIGHT">
             <padding>
