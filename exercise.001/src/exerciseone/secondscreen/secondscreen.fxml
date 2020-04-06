@@ -9,5 +9,5 @@
         <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
 
-    <Button text="Back to the Main Screen"/>
+    <Button fx:id="backToMainScreen" text="Back to the Main Screen" onAction="#showMainScreen"/>
 </VBox>
