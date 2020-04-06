@@ -1,6 +1,6 @@
-package exercise;
+package exerciseone;
 
-import exercise.one.OneView;
+import exerciseone.firstscreen.FirstScreenView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -11,9 +11,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("JavaFX Exercise One");
 
-        OneView oneView = new OneView();
+        FirstScreenView firstScreenView = new FirstScreenView();
 
-        Scene firstScene = new Scene(oneView.getView());
+        Scene firstScene = new Scene(firstScreenView.getView());
 
         primaryStage.setScene(firstScene);
         primaryStage.show();
