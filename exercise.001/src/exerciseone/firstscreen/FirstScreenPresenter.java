@@ -1,11 +1,14 @@
 package exerciseone.firstscreen;
 
+import exerciseone.secondscreen.SecondScreenView;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class FirstScreenPresenter {
     @FXML
@@ -16,6 +19,8 @@ public class FirstScreenPresenter {
     private CheckBox bodyCheckbox;
     @FXML
     private Button checkboxButton;
+    @FXML
+    private Button nextButton;
 
     private Boolean isCheckbox = Boolean.TRUE;
 
@@ -64,6 +69,19 @@ public class FirstScreenPresenter {
             bodyText.setVisible(Boolean.TRUE);
             isCheckbox = Boolean.TRUE;
         }
+    }
+
+    @FXML
+    protected void bodyNextButtonAction() {
+
+        Stage currentStage = (Stage) nextButton.getScene().getWindow();
+        currentStage.setTitle("JavaFX Exercise One - Second Screen");
+
+        SecondScreenView secondScreenView = new SecondScreenView();
+
+        Scene secondScene = new Scene(secondScreenView.getView());
+
+        currentStage.setScene(secondScene);
     }
 
     private void showEmptyTextFieldPopUpWarning() {
