@@ -6,7 +6,6 @@ import exerciseone.firstscreen.header.HeaderPresenter;
 import exerciseone.firstscreen.header.HeaderView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 import java.net.URL;
@@ -16,7 +15,7 @@ public class FirstScreenPresenter implements Initializable {
     @FXML
     private HBox header;
     @FXML
-    private GridPane body;
+    private HBox body;
 
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle) {

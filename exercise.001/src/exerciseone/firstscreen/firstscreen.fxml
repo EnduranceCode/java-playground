@@ -12,5 +12,5 @@
 
     <HBox fx:id="header"/>
 
-    <GridPane fx:id="body"/>
+    <HBox fx:id="body" VBox.vgrow="ALWAYS"/>
 </VBox>

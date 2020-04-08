@@ -6,10 +6,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="exerciseone.firstscreen.body.BodyPresenter"
-          alignment="CENTER" hgap="10" vgap="10" styleClass="body">
+          alignment="CENTER" hgap="10" vgap="10"  HBox.hgrow="ALWAYS" styleClass="body">
     <padding>
         <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
+
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS"/>
+    </rowConstraints>
 
     <columnConstraints>
         <ColumnConstraints percentWidth="33.0" halignment="CENTER"/>
@@ -18,9 +22,9 @@
     </columnConstraints>
 
     <Text fx:id="bodyText" visible="true"
-          GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+          GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3" styleClass="output-label"/>
     <CheckBox fx:id="bodyCheckbox" onAction="#toggleBodyOutputTextContainer" visible="false"
-              GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+              GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3" styleClass="output-label"/>
 
     <Button text="Print" onAction="#showInformationPopUp" prefWidth="200"
             GridPane.rowIndex="1" GridPane.columnIndex="0"/>
