@@ -7,9 +7,9 @@ import javafx.scene.control.TextField;
 
 public class HeaderPresenter {
     @FXML
-    TextField headerInputText;
+    private TextField headerInputText;
 
-    BodyPresenter bodyPresenter;
+    private BodyPresenter bodyPresenter;
 
     public void setBodyPresenter(BodyPresenter bodyPresenter) {
         this.bodyPresenter = bodyPresenter;

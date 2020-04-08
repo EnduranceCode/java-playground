@@ -14,9 +14,9 @@ import java.util.ResourceBundle;
 
 public class FirstScreenPresenter implements Initializable {
     @FXML
-    HBox header;
+    private HBox header;
     @FXML
-    GridPane body;
+    private GridPane body;
 
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle) {
