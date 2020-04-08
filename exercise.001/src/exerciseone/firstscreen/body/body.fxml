@@ -26,10 +26,10 @@
     <CheckBox fx:id="bodyCheckbox" onAction="#toggleBodyOutputTextContainer" visible="false"
               GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3" styleClass="output-label"/>
 
-    <Button text="Print" onAction="#showInformationPopUp" prefWidth="200"
+    <Button fx:id="bodyPrintButton" onAction="#showInformationPopUp" prefWidth="200"
             GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-    <Button fx:id="bodyNextButton" text="Next" onAction="#showSecondScreen" prefWidth="200"
+    <Button fx:id="bodyNextButton" onAction="#showSecondScreen" prefWidth="200"
             GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-    <Button fx:id="bodyCheckboxButton" text="Checkbox" onAction="#toggleBodyOutputTextContainer" prefWidth="200"
+    <Button fx:id="bodyToggleOutputButton" onAction="#toggleBodyOutputTextContainer" prefWidth="200"
             GridPane.rowIndex="1" GridPane.columnIndex="2"/>
 </GridPane>

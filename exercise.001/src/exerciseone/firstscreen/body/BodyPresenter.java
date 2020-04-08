@@ -3,6 +3,7 @@ package exerciseone.firstscreen.body;
 import exerciseone.firstscreen.utils.ExerciseUtils;
 import exerciseone.secondscreen.SecondScreenView;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -10,16 +11,25 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class BodyPresenter {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class BodyPresenter implements Initializable {
     @FXML
     private Text bodyText;
     @FXML
     private CheckBox bodyCheckbox;
     @FXML
-    private Button bodyCheckboxButton;
+    private Button bodyPrintButton;
     @FXML
     private Button bodyNextButton;
+    @FXML
+    private Button bodyToggleOutputButton;
 
+    private String printButtonLabel;
+    private String nextButtonLabel;
+    private String checkboxButtonLabel;
+    private String labelButtonLabel;
     private Boolean isCheckbox = Boolean.TRUE;
 
     public void setBodyText(String string) {
@@ -28,6 +38,18 @@ public class BodyPresenter {
 
     public void setBodyCheckboxLabel(String string) {
         this.bodyCheckbox.setText(string);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resourceBundle) {
+        printButtonLabel = resourceBundle.getString("print-button-label");
+        nextButtonLabel = resourceBundle.getString("next-button-label");
+        checkboxButtonLabel = resourceBundle.getString("checkbox-button-label");
+        labelButtonLabel = resourceBundle.getString("label-button-label");
+
+        bodyPrintButton.setText(printButtonLabel);
+        bodyNextButton.setText(nextButtonLabel);
+        bodyToggleOutputButton.setText(checkboxButtonLabel);
     }
 
     @FXML
@@ -58,13 +80,13 @@ public class BodyPresenter {
         }
 
         if (isCheckbox) {
-            bodyCheckboxButton.setText("Label");
+            bodyToggleOutputButton.setText(labelButtonLabel);
             bodyText.setVisible(Boolean.FALSE);
             bodyCheckbox.setVisible(Boolean.TRUE);
             isCheckbox = Boolean.FALSE;
             bodyCheckbox.setSelected(Boolean.FALSE);
         } else {
-            bodyCheckboxButton.setText("Checkbox");
+            bodyToggleOutputButton.setText(checkboxButtonLabel);
             bodyCheckbox.setVisible(Boolean.FALSE);
             bodyText.setVisible(Boolean.TRUE);
             isCheckbox = Boolean.TRUE;
