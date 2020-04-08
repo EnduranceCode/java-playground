@@ -36,9 +36,6 @@ public class BodyPresenter implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle) {
-        String printButtonLabel = resourceBundle.getString("print-button-label");
-        String nextButtonLabel = resourceBundle.getString("next-button-label");
-
         checkboxButtonLabel = resourceBundle.getString("checkbox-button-label");
         labelButtonLabel = resourceBundle.getString("label-button-label");
 
@@ -53,8 +50,6 @@ public class BodyPresenter implements Initializable {
             bodyCheckbox.setVisible(Boolean.TRUE);
         }
 
-        bodyPrintButton.setText(printButtonLabel);
-        bodyNextButton.setText(nextButtonLabel);
         bodyToggleOutputButton.setText(bodyOutput.getBodyToggleOutputButtonLabel());
     }
 

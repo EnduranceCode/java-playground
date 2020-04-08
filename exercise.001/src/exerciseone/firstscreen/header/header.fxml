@@ -12,5 +12,6 @@
 
     <TextField fx:id="headerInputText" promptText="Write some text..." minWidth="300" prefWidth="300"/>
 
-    <Button fx:id="headerSubmitButton" onAction="#setBodyText" minWidth="100" prefWidth="100"/>
+    <Button fx:id="headerSubmitButton" text="%submit-button-label" onAction="#setBodyText"
+            minWidth="100" prefWidth="100"/>
 </HBox>
