@@ -1,5 +1,6 @@
 package exerciseone.firstscreen.body;
 
+import exerciseone.firstscreen.model.BodyOutput;
 import exerciseone.firstscreen.utils.ExerciseUtils;
 import exerciseone.secondscreen.SecondScreenView;
 import javafx.fxml.FXML;
@@ -11,6 +12,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.inject.Inject;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,30 +28,40 @@ public class BodyPresenter implements Initializable {
     @FXML
     private Button bodyToggleOutputButton;
 
-    private String printButtonLabel;
-    private String nextButtonLabel;
+    @Inject
+    BodyOutput bodyOutput;
+
     private String checkboxButtonLabel;
     private String labelButtonLabel;
-    private Boolean isCheckbox = Boolean.TRUE;
-
-    public void setBodyText(String string) {
-        bodyText.setText(string);
-    }
-
-    public void setBodyCheckboxLabel(String string) {
-        this.bodyCheckbox.setText(string);
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle) {
-        printButtonLabel = resourceBundle.getString("print-button-label");
-        nextButtonLabel = resourceBundle.getString("next-button-label");
+        String printButtonLabel = resourceBundle.getString("print-button-label");
+        String nextButtonLabel = resourceBundle.getString("next-button-label");
+
         checkboxButtonLabel = resourceBundle.getString("checkbox-button-label");
         labelButtonLabel = resourceBundle.getString("label-button-label");
 
+        bodyText.setText(bodyOutput.getBodyOutputContent());
+        bodyCheckbox.setText(bodyOutput.getBodyOutputContent());
+
+        if (Boolean.TRUE.equals(bodyOutput.isActiveLabel())) {
+            bodyText.setVisible(Boolean.TRUE);
+            bodyCheckbox.setVisible(Boolean.FALSE);
+        } else {
+            bodyText.setVisible(Boolean.FALSE);
+            bodyCheckbox.setVisible(Boolean.TRUE);
+        }
+
         bodyPrintButton.setText(printButtonLabel);
         bodyNextButton.setText(nextButtonLabel);
-        bodyToggleOutputButton.setText(checkboxButtonLabel);
+        bodyToggleOutputButton.setText(bodyOutput.getBodyToggleOutputButtonLabel());
+    }
+
+    public void setBodyOutputContent(String text) {
+        bodyOutput.setBodyOutputContent(text);
+        bodyText.setText(text);
+        bodyCheckbox.setText(text);
     }
 
     @FXML
@@ -79,17 +91,19 @@ public class BodyPresenter implements Initializable {
             return;
         }
 
-        if (isCheckbox) {
+        if (Boolean.TRUE.equals(bodyOutput.isActiveLabel())) {
+            bodyOutput.setBodyToggleOutputButtonLabel(labelButtonLabel);
             bodyToggleOutputButton.setText(labelButtonLabel);
             bodyText.setVisible(Boolean.FALSE);
             bodyCheckbox.setVisible(Boolean.TRUE);
-            isCheckbox = Boolean.FALSE;
+            bodyOutput.setActiveLabel(Boolean.FALSE);
             bodyCheckbox.setSelected(Boolean.FALSE);
         } else {
+            bodyOutput.setBodyToggleOutputButtonLabel(checkboxButtonLabel);
             bodyToggleOutputButton.setText(checkboxButtonLabel);
             bodyCheckbox.setVisible(Boolean.FALSE);
             bodyText.setVisible(Boolean.TRUE);
-            isCheckbox = Boolean.TRUE;
+            bodyOutput.setActiveLabel(Boolean.TRUE);
         }
     }
 }

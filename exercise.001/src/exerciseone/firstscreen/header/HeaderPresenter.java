@@ -18,11 +18,9 @@ public class HeaderPresenter implements Initializable {
 
     private BodyPresenter bodyPresenter;
 
-    private String submitButtonLabel;
-
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle) {
-        submitButtonLabel = resourceBundle.getString("submit-button-label");
+        String submitButtonLabel = resourceBundle.getString("submit-button-label");
 
         headerSubmitButton.setText(submitButtonLabel);
     }
@@ -38,8 +36,7 @@ public class HeaderPresenter implements Initializable {
             return;
         }
 
-        bodyPresenter.setBodyText(headerInputText.getText());
-        bodyPresenter.setBodyCheckboxLabel(headerInputText.getText());
+        bodyPresenter.setBodyOutputContent(headerInputText.getText());
 
         headerInputText.clear();
     }
