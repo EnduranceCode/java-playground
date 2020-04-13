@@ -34,21 +34,22 @@
         </graphic>
     </Label>
 
-    <fx:define>
-        <ToggleGroup fx:id="colorToggleGroup"/>
-    </fx:define>
-    <RadioButton toggleGroup="$colorToggleGroup" GridPane.rowIndex="0" GridPane.columnIndex="2" text="Red"/>
-    <RadioButton toggleGroup="$colorToggleGroup" GridPane.rowIndex="0" GridPane.columnIndex="3" text="Blue"
-                 selected="true"/>
-    <RadioButton toggleGroup="$colorToggleGroup" GridPane.rowIndex="0" GridPane.columnIndex="4" text="Green"/>
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="2" spacing="5">
+        <fx:define>
+            <ToggleGroup fx:id="colorToggleGroup"/>
+        </fx:define>
+        <RadioButton toggleGroup="$colorToggleGroup" text="Red"/>
+        <RadioButton toggleGroup="$colorToggleGroup" text="Blue" selected="true"/>
+        <RadioButton toggleGroup="$colorToggleGroup" text="Green"/>
+    </VBox>
 
-    <VBox GridPane.rowIndex="0" GridPane.columnIndex="5" spacing="5">
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="3" spacing="5">
         <CheckBox text="Dog"/>
         <CheckBox text="Cat"/>
         <CheckBox text="Bird"/>
     </VBox>
 
-    <HBox GridPane.rowIndex="0" GridPane.columnIndex="6" spacing="5">
+    <HBox GridPane.rowIndex="0" GridPane.columnIndex="4" spacing="5">
         <ToggleButton text="Toggle Me"/>
         <ToggleButton text="Hello"/>
         <ToggleButton text="Good-Bye"/>
