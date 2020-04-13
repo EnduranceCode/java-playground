@@ -9,6 +9,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.VBox?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <Button text="Click me" GridPane.rowIndex="0" GridPane.columnIndex="0">
@@ -39,5 +40,9 @@
                  selected="true"/>
     <RadioButton toggleGroup="$colorToggleGroup" GridPane.rowIndex="0" GridPane.columnIndex="4" text="Green"/>
 
-    <CheckBox text="Subscribe to our Newsletter" GridPane.rowIndex="0" GridPane.columnIndex="5" indeterminate="true"/>
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="5" spacing="5">
+        <CheckBox text="Dog"/>
+        <CheckBox text="Cat"/>
+        <CheckBox text="Bird"/>
+    </VBox>
 </GridPane>
