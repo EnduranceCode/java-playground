@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="exercisetwo.firstscreen.FirstScreenPresenter"
+      prefWidth="800" prefHeight="600" spacing="25" styleClass="root">
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <HBox fx:id="header"/>
+
+    <HBox fx:id="body" VBox.vgrow="ALWAYS"/>
+</VBox>
