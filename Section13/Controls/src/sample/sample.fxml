@@ -16,9 +16,10 @@
         </graphic>
     </Button>
 
-    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="This is a label" textFill="blue">
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="This is a label with a extremly long text"
+           textFill="blue" wrapText="true">
         <font>
-            <Font name="Arial italic" size="12"/>
+            <Font name="Arial italic" size="40"/>
         </font>
 
         <graphic>
