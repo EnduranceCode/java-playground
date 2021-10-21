@@ -18,4 +18,11 @@ public class MessageUtil {
         System.out.println(message);
         return message;
     }
+
+    // Add "Hi!" to the message
+    public String salutationMessage() {
+        message = "Hi! " + message;
+        System.out.println(message);
+        return message;
+    }
 }
