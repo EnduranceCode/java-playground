@@ -19,6 +19,15 @@ public class MessageUtil {
         return message;
     }
 
+    // Prints the message in an infinite loop
+    @SuppressWarnings({"squid:S2189", "squid:S106"})
+    public void printMessageInfiniteLoop() {
+        System.out.println(message);
+        while (true) {
+            System.out.println(message);
+        }
+    }
+
     // Add "Hi!" to the message
     public String salutationMessage() {
         message = "Hi! " + message;
