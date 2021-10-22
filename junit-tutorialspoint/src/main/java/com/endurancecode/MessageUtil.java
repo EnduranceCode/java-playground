@@ -28,6 +28,14 @@ public class MessageUtil {
         }
     }
 
+    public void printMessageAndThrowException() {
+        System.out.println(message);
+
+        int zero = 0;
+        int one = 1;
+        int exceptionResult = one / zero;
+    }
+
     // Add "Hi!" to the message
     public String salutationMessage() {
         message = "Hi! " + message;
