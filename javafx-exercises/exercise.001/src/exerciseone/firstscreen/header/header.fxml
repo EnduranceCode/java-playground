@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="exerciseone.firstscreen.header.HeaderPresenter"
+      spacing="15" HBox.hgrow="ALWAYS" styleClass="header">
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <TextField fx:id="headerInputText" promptText="Write some text..." minWidth="300" prefWidth="300"/>
+
+    <Button fx:id="headerSubmitButton" text="%submit-button-label" onAction="#setBodyText"
+            minWidth="100" prefWidth="100"/>
+</HBox>
