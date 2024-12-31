@@ -1,0 +1,35 @@
+root {
+    display: block;
+}
+
+.root {
+    -fx-background-image: url("background.jpg");
+}
+
+.label {
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-text-fill: #333333;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+#welcome-text {
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-fill: #818181;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 32px;
+}
+
+#actiontarget {
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-fill: FIREBRICK;
+    -fx-font-weight: bold;
+}
