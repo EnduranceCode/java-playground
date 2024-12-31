@@ -1,12 +1,12 @@
 # JavaFX Code Exercises
 
-This repository contains the code written while solving some custom coding exercises that were created to learn [JavaFX](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm).
+The folder [`javafx-exercises`](../javafx-exercises/) contains the code written while solving some custom coding exercises that were created to learn [JavaFX](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm).
 
-## Repository Structure
+## Folder Structure
 
-Each folder of this repository contains a JavaFX project that can be imported to an [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment). The IDE used to solve this coding exercises is [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download).
+Each folder contained on the [`javafx-exercises`](../javafx-exercises/) folder contains a JavaFX project that can be imported to an [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment). The IDE used to solve this coding exercises is [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download).
 
-This repository also includes a `lib` folder that contains all the used [External Libraries](#external-libraries).
+The folder [`javafx-exercises`](../javafx-exercises/) also includes a `lib` folder that contains all the used [External Libraries](#external-libraries).
 
 ## External Libraries
 

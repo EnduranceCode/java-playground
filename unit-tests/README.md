@@ -1,6 +1,6 @@
 # Unit Tests
 
-This repository contains the code written following tutorials and courses about **Unit Tests**.
+The folder [`unit-tests`](../unit-tests/) contains the code written following tutorials and courses about **Unit Tests**.
 
 ## Tutorialspoint - JUnit
 

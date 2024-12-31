@@ -10,9 +10,9 @@ The first course provides the student with a basic foundation in Java syntax, wh
 
 The second course will introduce the student to some of the most powerful programming concepts in Java, including: objects, inheritance and collections. The student will learn how to use these object-oriented programming concepts in code examples, discover how these concepts are used in applications that require user input, and understand the benefits of mastering these concepts in Java. By the end of the course, the student will create his own game, understand how and when to apply foundational Java concepts, and will gain a deeper understanding of the tools and logic that professional Java developers use everyday.
 
-## About this repository
+## About this folder
 
-All the code written while taking the above mentioned courses will be stored in different folders of this repository. This approach is taken in order avoid having this GitHub account bloated and cluttered with many repositories holding very small projects.
+All the code written while taking the above mentioned courses will be stored in different folders of the [`udacity`](../udacity/) folder. This approach is taken in order avoid having this GitHub account bloated and cluttered with many repositories holding very small projects.
 
 Throughout these courses, [NetBeans](https://netbeans.org) is the IDE that the Udacity instructors use and recommend. [NetBeans](https://netbeans.org) will no be used in the coding tasks of these two courses because the goal is to gain more proficiency with [Eclipse](https://www.eclipse.org) and therefore, all the necessary code will be written with [Eclipse](https://www.eclipse.org).
 
