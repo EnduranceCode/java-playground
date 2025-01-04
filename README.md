@@ -16,17 +16,21 @@ The folder [`udacity`](./udacity/) following the [Java Programming Language](htt
 
 The folder [`academia-everis`](./academia-everis/) contains the code written following the Java code bootcamp hosted by [everis](https://www.everis.com/portugal/pt-pt/home-pt).
 
-### # Oracle's Getting Started with JavaFX Tutorials
+### Java Programming Masterclass for Software Developers
 
-The folder [`javafx-oracle`](./javafx-oracle/) contains the code developed following the tutorials [Getting Started with JavaFX](https://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm) created by [Oracle](https://www.oracle.com).
+The folder [`programming-masterclass`](./programming-masterclass/) contains the code developed following the course [Java Programming Masterclass for Software Developers](https://www.udemy.com/share/101WdqBEAdeVdV) created by [Tim Buchalka](https://www.timbuchalka.com).
+
+### Java Foundations Exam 1Z0-811
+
+The folder [`exam-1z0-811`](./exam-1z0-811) contains the code written while studying for the [Java Foundations Exam 1Z0-811](https://education.oracle.com/java-foundations/pexam_1Z0-811).
+
+### Oracle's Getting Started with JavaFX Tutorials
+
+The folder [`javafx-oracle`](./javafx-oracle/) contains the code written while following the tutorials [Getting Started with JavaFX](https://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm) created by [Oracle](https://www.oracle.com).
 
 ### JavaFX custom exercises
 
 The folder [`javafx-exercises`](./javafx-exercises/) contains the code written while solving some custom coding exercises that were created to learn [JavaFX](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm).
-
-### Java Programming Masterclass for Software Developers
-
-The folder [`programming-masterclass`](./programming-masterclass/) contains the code developed following the course [Java Programming Masterclass for Software Developers](https://www.udemy.com/share/101WdqBEAdeVdV) created by [Tim Buchalka](https://www.timbuchalka.com).
 
 ### Unit Tests
 
