@@ -1,0 +1,11 @@
+# Java literals
+
+true false null
+
+# Java Keywords
+
+public class void
+
+# Java reserved word that is neither a literal nor a keyword
+
+goto
