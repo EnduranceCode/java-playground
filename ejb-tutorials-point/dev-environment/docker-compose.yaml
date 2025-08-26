@@ -1,0 +1,54 @@
+volumes:
+  ejb-postgres-data:
+    driver: local
+services:
+  postgres:
+    image: postgres:${POSTGRES_VERSION}
+    container_name: ${POSTGRES_CONTAINER_NAME}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - ejb-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ejb-network
+
+  wildfly:
+    build:
+      context: ./wildfly
+      args:
+        WILDFLY_VERSION: ${WILDFLY_VERSION}
+        WILDFLY_POSTGRES_DRIVER: ${WILDFLY_POSTGRES_DRIVER}
+        WILDFLY_ADMIN_USERNAME: ${WILDFLY_ADMIN_USERNAME}
+        WILDFLY_APP_USERNAME: ${WILDFLY_APP_USERNAME}
+        WILDFLY_PASSWORD: ${WILDFLY_PASSWORD}
+        POSTGRES_CONTAINER_NAME: ${POSTGRES_CONTAINER_NAME}
+        POSTGRES_DB: ${POSTGRES_DB}
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    image: ejb-wildfly:${WILDFLY_VERSION}
+    container_name: ${WILDFLY_CONTAINER_NAME}
+    ports:
+      - "${WILDFLY_HTTP_PORT}:8080"
+      - "${WILDFLY_MANAGEMENT_PORT}:9990"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9990/management/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - ejb-network
+    depends_on:
+      - postgres
+
+networks:
+  ejb-network:
+    driver: bridge

@@ -1,0 +1,6 @@
+# Tutorial
+# ----------------------------------------------------------------------------------------------------------------------
+# -- Tutorial specific files
+
+dev-environment/wildfly/certificates/**
+!dev-environment/wildfly/certificates/instructions.txt

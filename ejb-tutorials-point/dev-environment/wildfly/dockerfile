@@ -1,0 +1,97 @@
+# This argument is declared here because it is used with the FROM command
+ARG WILDFLY_VERSION=37.0.0.Final-jdk17
+FROM quay.io/wildfly/wildfly:${WILDFLY_VERSION}
+
+# These arguments must be declared here because arguments declared before the FROM command are only available
+# up to the FROM command execution (except when used with the FROM command)
+ARG WILDFLY_POSTGRES_DRIVER
+ARG WILDFLY_ADMIN_USERNAME
+ARG WILDFLY_APP_USERNAME
+ARG WILDFLY_PASSWORD
+ARG POSTGRES_CONTAINER_NAME
+ARG POSTGRES_DB
+ARG POSTGRES_USER
+ARG POSTGRES_PASSWORD
+
+# Set environment variables for WildFly installation and configuration directories, and WildFly admin user credentials
+ENV WILDFLY_HOME=/opt/jboss/wildfly
+ENV DEPLOYMENT_DIR=${WILDFLY_HOME}/standalone/deployments/
+ENV CONFIGURATION_DIR=${WILDFLY_HOME}/standalone/configuration
+ENV WILDFLY_POSTGRES_DRIVER=${WILDFLY_POSTGRES_DRIVER}
+ENV WILDFLY_ADMIN_USERNAME=${WILDFLY_ADMIN_USERNAME}
+ENV WILDFLY_APP_USERNAME=${WILDFLY_APP_USERNAME}
+ENV WILDFLY_PASSWORD=${WILDFLY_PASSWORD}
+ENV POSTGRES_CONTAINER_NAME=${POSTGRES_CONTAINER_NAME}
+ENV POSTGRES_DB=${POSTGRES_DB}
+ENV POSTGRES_USER=${POSTGRES_USER}
+ENV POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+# Switch to root user to copy the certificate, if included, and update CA certificates
+USER root
+
+# Copy the ./certificates folder to the /tmp folder of the image. As explained in the ./certificates/instructions.txt
+# file, this folder should contain, if necessary, the certificate.crt and certificate.der certificates files
+COPY certificates/ /tmp/certificates
+
+# Check if the certificate.crt file exists in /tmp/certificates; if it does, copy it to the system's trusted
+# CA certificates directory for the application to use
+RUN if [ -f /tmp/certificates/certificate.crt ]; then \
+  cp /tmp/certificates/certificate.crt /etc/pki/ca-trust/source/anchors/; \
+  fi
+
+# Update the CA certificates
+RUN update-ca-trust enable && update-ca-trust extract
+
+# Clean up the temporary certificates folder
+RUN rm -rf /tmp/certificates
+
+# Create a temporary folder to hold the PostgreSQL JDBC driver, module.xml, and add-datasource.cli files
+RUN mkdir -p /tmp/postgres
+
+# Download PostgreSQL JDBC driver
+RUN curl -L -o /tmp/postgres/postgresql.jar https://jdbc.postgresql.org/download/${WILDFLY_POSTGRES_DRIVER}
+
+# Copy the module.xml and add-datasource.cli files to the /tmp/postgres folder
+COPY configuration/module.xml /tmp/postgres/module.xml
+COPY configuration/add-datasource.cli /tmp/postgres/add-datasource.cli
+
+# Replace placeholders in the add-datasource.cli file with actual values from build arguments
+RUN sed -i "s/{POSTGRES_CONTAINER_NAME}/${POSTGRES_CONTAINER_NAME}/g" /tmp/postgres/add-datasource.cli && \
+    sed -i "s/{POSTGRES_DB}/${POSTGRES_DB}/g" /tmp/postgres/add-datasource.cli && \
+    sed -i "s/{POSTGRES_USER}/${POSTGRES_USER}/g" /tmp/postgres/add-datasource.cli && \
+    sed -i "s/{POSTGRES_PASSWORD}/${POSTGRES_PASSWORD}/g" /tmp/postgres/add-datasource.cli
+
+# Create WildFly module for PostgreSQL driver
+RUN mkdir -p ${WILDFLY_HOME}/modules/org/postgresql/main && \
+    cp /tmp/postgres/postgresql.jar ${WILDFLY_HOME}/modules/org/postgresql/main/ && \
+    cp /tmp/postgres/module.xml ${WILDFLY_HOME}/modules/org/postgresql/main/module.xml
+
+# Set permissions to allow the jboss user to access the WildFly installation and configuration files
+RUN chown -R jboss:jboss /tmp/postgres && \
+  chown -R jboss:jboss /${WILDFLY_HOME} && \
+  chmod -R g+rwX ${WILDFLY_HOME} && \
+  chmod ug+x ${WILDFLY_HOME}/bin/standalone.sh && \
+  chmod g+w ${DEPLOYMENT_DIR}
+
+# Switch back to the jboss user to run WildFly
+USER jboss
+
+# Execute the add-datasource.cli script to add the PostgreSQL datasource to WildFly configuration
+RUN ${WILDFLY_HOME}/bin/jboss-cli.sh --file=/tmp/postgres/add-datasource.cli
+
+# Add the WildFly administration user using the provided build arguments, using the --silent option
+# to avoid interactive prompt (the user will be added to the ManagementRealm)
+RUN ${WILDFLY_HOME}/bin/add-user.sh -u ${WILDFLY_ADMIN_USERNAME} -p ${WILDFLY_PASSWORD} --silent
+
+# Add the WildFly administration user using the provided build arguments, using the --silent option
+# to avoid interactive prompt (the user will be added to the ApplicationRealm)
+RUN ${WILDFLY_HOME}/bin/add-user.sh -a -u ${WILDFLY_APP_USERNAME} -p ${WILDFLY_PASSWORD} --silent
+
+# Clean up the temporary postgres folder
+RUN rm -rf /tmp/postgres
+
+# Clean up the WildFly standalone_xml_history to avoid issues with configuration changes
+RUN rm -rf ${WILDFLY_HOME}/standalone/configuration/standalone_xml_history/current/*
+
+ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -b=0.0.0.0 -bmanagement=0.0.0.0 -c standalone-full.xml
+EXPOSE 8080 9990
