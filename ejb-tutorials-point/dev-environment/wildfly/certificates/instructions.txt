@@ -1,0 +1,22 @@
+@file instructions.txt
+@description Documentation for the certificates folder
+
+## Purpose
+
+This folder is specifically for storing certificate files needed to communicate with external services over HTTPS
+while building the `wildfly/dockerfile` image and running the respective container behind a proxy like ZScaler.
+
+## Instructions for Use
+
+If you need to add certificates to communicate with external services over HTTPS while building
+the `wildfly/dockerfile`, image please follow these guidelines:
+
+1. Place the required certificate files in this folder.
+2. Use the following naming conventions for the files:
+   - `certificate.crt` – Use this format for standard certificate files.
+   - `certificate.der` – Use this format for binary encoded certificates.
+
+## Note
+
+Ensure that any certificates added are necessary and do not expose sensitive information.
+This folder is excluded from version control; please ensure no sensitive data is committed.

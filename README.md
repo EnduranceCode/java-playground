@@ -32,6 +32,12 @@ The folder [`javafx-oracle`](./javafx-oracle/) contains the code written while f
 
 The folder [`javafx-exercises`](./javafx-exercises/) contains the code written while solving some custom coding exercises that were created to learn [JavaFX](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm).
 
+### Enterprise Java Beans by Tutorials Point
+
+The folder [`ejb-tutorials-point`](./ejb-tutorials-point/) contains the code written while following
+the [EJB Tutorial](https://www.tutorialspoint.com/ejb/index.htm)
+available at [Tutorials Point](https://www.tutorialspoint.com/).
+
 ### Unit Tests
 
 The folder [`unit-tests`](./unit-tests/) contains the code written following tutorials and courses about **Unit Tests**.
