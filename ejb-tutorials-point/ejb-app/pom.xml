@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.endurancecode.playground</groupId>
+    <artifactId>ejb-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>ejb-app</name>
+    <description>An app to learn Enterprise Java Beans development</description>
+
+    <url>https://github.com/EnduranceCode/java-playground/tree/master/ejb-tutorials-point/ejb-app</url>
+
+    <developers>
+        <developer>
+            <id>EnduranceCode</id>
+            <name>Ricardo do Canto</name>
+            <email>endurancecode@gmail.com</email>
+            <roles>
+                <role>Lead Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>library-bean</module>
+        <module>client-bean</module>
+    </modules>
+
+    <scm>
+        <connection>scm:git:https://github.com/EnduranceCode/java-playground.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:EnduranceCode/java-playground.git
+        </developerConnection>
+        <url>https://github.com/EnduranceCode/java-playground</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>17</java.version>
+        <jakarta.ejb-api.version>4.0.1</jakarta.ejb-api.version>
+        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+        <app.version>${project.version}</app.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>jakarta.ejb</groupId>
+                <artifactId>jakarta.ejb-api</artifactId>
+                <version>${jakarta.ejb-api.version}</version>
+                <!-- Provided because the server, e.g. WildFly, has it -->
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.wildfly</groupId>
+                <artifactId>wildfly-ejb-client-bom</artifactId>
+                <version>37.0.0.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.endurancecode.playground</groupId>
+                <artifactId>library-bean</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
