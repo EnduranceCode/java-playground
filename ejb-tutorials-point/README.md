@@ -7,15 +7,17 @@ available at [Tutorials Point](https://www.tutorialspoint.com/).
 ## Table of Contents
 
 1. [Tutorial Content & Progress](#tutorial-content--progress)
-2. [Tutorial environment setup](#tutorial-environment-setup)
+2. [Folder Structure](#folder-structure) 
+3. [Tutorial environment setup](#tutorial-environment-setup)
+4. [Application deployment](#application-deployment)
 
 ## Tutorial Content & Progress
 
 - [x] EJB - Home
 - [x] EJB - Overview
-- [x] EJB - Environment Setup - TAG: `EJBT-L03`
-- [x] EJB - Create Application -TAG: `EJBT-L04`
-- [ ] EJB - Stateless Bean
+- [x] EJB - Environment Setup | tag: `EJBT-L03`
+- [x] EJB - Create Application | tag: `EJBT-L04`
+- [x] EJB - Stateless Bean | tag: `EJBT-L05`
 - [ ] EJB - Stateful Bean
 - [ ] EJB - Persistence
 - [ ] EJB - Message Driven Beans
@@ -38,6 +40,18 @@ available at [Tutorials Point](https://www.tutorialspoint.com/).
 - [ ] EJB - Quick Guide
 - [ ] EJB - Useful Resources
 - [ ] EJB - Discussion
+
+## Folder Structure
+
+### dev-environment
+
+The folder [`dev-environment`](./dev-environment) contains the Docker environment setup required to run both
+the application server and the PostgreSQL database server needed for the tutorial's development environment.
+
+### ejb-app
+
+The folder [`ejb-app`](./ejb-app) contains the EJB modules developed while following the tutorial and the script
+to deploy them to the application server.
 
 ## Tutorial environment setup
 
