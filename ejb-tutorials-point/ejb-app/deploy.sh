@@ -1,10 +1,10 @@
 #!/bin/bash
 # deploy.sh
 #
-# This script automates the deployment of the Enterprise Java Beans (EJB) modules to the Wildfly application server
-# running in a Docker container built and started with the code available in the `dev-environment` folder included in
-# this repository (ejb-tutorials-point/dev-environment). It copies the EJB JAR files to the appropriate deployment
-# folder.
+# This script automates the the build and deployment of the Enterprise Java Beans (EJB) modules to the Wildfly
+# application server running in a Docker container built and started with the code available in the `dev-environment`
+# folder included in this repository (ejb-tutorials-point/dev-environment). It copies the EJB JAR files
+# to the appropriate deployment folder.
 
 # UI messages
 MESSAGE_MISSING_ARTIFACT="The artifact is not present in the target folder"
@@ -24,6 +24,12 @@ fi
 
 EJB_SERVER="${WILDFLY_CONTAINER_NAME}:/opt/jboss/wildfly/standalone/deployments"
 
+echo "------------------------------------------------------------------------------------------------------------------"
+echo -e "[\e[34mINFO\e[0m] Building the application"
+mvn clean package
+echo "------------------------------------------------------------------------------------------------------------------"
+
+echo
 echo "------------------------------------------------------------------------------------------------------------------"
 echo -e "[\e[34mINFO\e[0m] Deploying the ejb-library module on the Wildfly container"
 if [ -f ./library-bean/target/ejb-library.jar ]; then

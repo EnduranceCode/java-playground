@@ -18,7 +18,7 @@ available at [Tutorials Point](https://www.tutorialspoint.com/).
 - [x] EJB - Environment Setup | tag: `EJBT-L03`
 - [x] EJB - Create Application | tag: `EJBT-L04`
 - [x] EJB - Stateless Bean | tag: `EJBT-L05`
-- [ ] EJB - Stateful Bean
+- [x] EJB - Stateful Bean | tag: `EJBT-L06`
 - [ ] EJB - Persistence
 - [ ] EJB - Message Driven Beans
 - [ ] EJB - Annotations

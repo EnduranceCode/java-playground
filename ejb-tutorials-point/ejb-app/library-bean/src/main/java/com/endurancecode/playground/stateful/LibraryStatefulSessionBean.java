@@ -1,16 +1,16 @@
-package com.endurancecode.playground.stateless;
+package com.endurancecode.playground.stateful;
 
-import jakarta.ejb.Stateless;
+import jakarta.ejb.Stateful;
 import java.util.ArrayList;
 import java.util.List;
 
-@Stateless
-public class LibrarySessionBean implements LibrarySessionBeanRemote {
+@Stateful
+public class LibraryStatefulSessionBean implements LibraryStatefulSessionBeanRemote {
 
     List<String> bookShelf;
 
-    public LibrarySessionBean() {
-        bookShelf = new ArrayList<>();
+    public LibraryStatefulSessionBean() {
+        this.bookShelf = new ArrayList<>();
     }
 
     @Override

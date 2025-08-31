@@ -1,10 +1,10 @@
-package com.endurancecode.playground.stateless;
+package com.endurancecode.playground.stateful;
 
 import jakarta.ejb.Remote;
 import java.util.List;
 
 @Remote
-public interface LibrarySessionBeanRemote {
+public interface LibraryStatefulSessionBeanRemote {
 
     /**
      * Adds a book to the library.
