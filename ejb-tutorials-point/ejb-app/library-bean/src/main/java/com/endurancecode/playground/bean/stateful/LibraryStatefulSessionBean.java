@@ -1,4 +1,4 @@
-package com.endurancecode.playground.stateful;
+package com.endurancecode.playground.bean.stateful;
 
 import jakarta.ejb.Stateful;
 import java.util.ArrayList;

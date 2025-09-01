@@ -40,6 +40,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
         <jakarta.ejb-api.version>4.0.1</jakarta.ejb-api.version>
+        <jakarta.persistence-api.version>3.2.0</jakarta.persistence-api.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <app.version>${project.version}</app.version>
     </properties>
@@ -51,6 +52,13 @@
                 <artifactId>jakarta.ejb-api</artifactId>
                 <version>${jakarta.ejb-api.version}</version>
                 <!-- Provided because the server, e.g. WildFly, has it -->
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.persistence</groupId>
+                <artifactId>jakarta.persistence-api</artifactId>
+                <version>${jakarta.persistence-api.version}</version>
                 <scope>provided</scope>
             </dependency>
 

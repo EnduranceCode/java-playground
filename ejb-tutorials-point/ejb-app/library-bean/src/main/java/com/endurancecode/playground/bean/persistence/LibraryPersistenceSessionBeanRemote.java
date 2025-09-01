@@ -1,17 +1,18 @@
-package com.endurancecode.playground.stateful;
+package com.endurancecode.playground.bean.persistence;
 
+import com.endurancecode.playground.entity.Book;
 import jakarta.ejb.Remote;
 import java.util.List;
 
 @Remote
-public interface LibraryStatefulSessionBeanRemote {
+public interface LibraryPersistenceSessionBeanRemote {
 
     /**
      * Adds a book to the library.
      *
-     * @param bookName The name of the book to add.
+     * @param book The book entity to add.
      */
-    void addBook(String bookName);
+    void addBook(Book book);
 
     /**
      * Retrieves the list of books in the library.

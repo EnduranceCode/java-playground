@@ -1,6 +1,7 @@
-package com.endurancecode.playground.beans;
+package com.endurancecode.playground.bean;
 
-import com.endurancecode.playground.stateful.LibraryStatefulSessionBeanRemote;
+import com.endurancecode.playground.bean.persistence.LibraryPersistenceSessionBeanRemote;
+import com.endurancecode.playground.entity.Book;
 import com.endurancecode.playground.ui.UIGenerator;
 import java.io.BufferedReader;
 import java.util.List;
@@ -8,23 +9,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.InitialContext;
 
-public final class StatefulConnection {
+public class PersistenceConnection {
 
-    private static final Logger LOGGER = Logger.getLogger(StatefulConnection.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(PersistenceConnection.class.getName());
 
-    private static final String JNDI_NAME_STATEFUL_BEAN = "ejb:/ejb-library/LibraryStatefulSessionBean!com.endurancecode.playground.stateful.LibraryStatefulSessionBeanRemote";
-    private static final String BEAN_TYPE = "Stateful EJB";
+    private static final String JNDI_NAME_PERSISTENCE_BEAN = "ejb:/ejb-library/LibraryPersistenceSessionBean!com.endurancecode.playground.bean.persistence.LibraryPersistenceSessionBeanRemote";
+    private static final String BEAN_TYPE = "Persistence EJB";
 
-    private StatefulConnection() {
+    private PersistenceConnection() {
         super();
     }
 
-    public static void testStatefulEjbConnection(InitialContext context, BufferedReader reader) {
+    public static void testPersistenceEjbConnection(InitialContext context, BufferedReader reader) {
         try {
             int choice;
 
-            LibraryStatefulSessionBeanRemote libraryBeanFirstLookup = (LibraryStatefulSessionBeanRemote) context.lookup(
-                    JNDI_NAME_STATEFUL_BEAN);
+            LibraryPersistenceSessionBeanRemote libraryBeanFirstLookup = (LibraryPersistenceSessionBeanRemote) context.lookup(
+                    JNDI_NAME_PERSISTENCE_BEAN);
 
             while (true) {
                 UIGenerator.showUI(BEAN_TYPE);
@@ -34,7 +35,9 @@ public final class StatefulConnection {
                 if (choice == 1) {
                     System.out.print(UIGenerator.UI_LINE_BREAK.concat(UIGenerator.UI_BOOK_PROMPT));
                     String bookName = reader.readLine();
-                    libraryBeanFirstLookup.addBook(bookName);
+                    Book book = new Book();
+                    book.setName(bookName);
+                    libraryBeanFirstLookup.addBook(book);
                     System.out.print(UIGenerator.UI_LINE_BREAK);
                 } else if (choice == 2) {
                     break;
@@ -46,16 +49,16 @@ public final class StatefulConnection {
             List<String> booksFromFirstLookup = libraryBeanFirstLookup.getBooks();
             UIGenerator.listBooks(booksFromFirstLookup, true);
 
-            LibraryStatefulSessionBeanRemote libraryBeanSecondLookup = (LibraryStatefulSessionBeanRemote) context.lookup(
-                    JNDI_NAME_STATEFUL_BEAN);
+            LibraryPersistenceSessionBeanRemote libraryBeanSecondLookup = (LibraryPersistenceSessionBeanRemote) context.lookup(
+                    JNDI_NAME_PERSISTENCE_BEAN);
             List<String> booksFromSecondLookup = libraryBeanSecondLookup.getBooks();
 
             System.out.println(UIGenerator.generateUiSeparator(UIGenerator.UI_SCREEN_WIDTH));
-            System.out.println("Using second lookup to get library stateful object");
+            System.out.println("Using second lookup to get library persistence object");
             UIGenerator.listBooks(booksFromSecondLookup, false);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
-            LOGGER.log(Level.SEVERE, "Exception occurred in testStatefulEjbConnection", exception);
+            LOGGER.log(Level.SEVERE, "Exception occurred in testPersistenceEjbConnection", exception);
         }
     }
 }

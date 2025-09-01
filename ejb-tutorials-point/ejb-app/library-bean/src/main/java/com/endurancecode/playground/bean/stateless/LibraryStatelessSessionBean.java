@@ -1,15 +1,15 @@
-package com.endurancecode.playground.stateless;
+package com.endurancecode.playground.bean.stateless;
 
 import jakarta.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
-public class LibrarySessionBean implements LibrarySessionBeanRemote {
+public class LibraryStatelessSessionBean implements LibraryStatelessSessionBeanRemote {
 
     List<String> bookShelf;
 
-    public LibrarySessionBean() {
+    public LibraryStatelessSessionBean() {
         bookShelf = new ArrayList<>();
     }
 

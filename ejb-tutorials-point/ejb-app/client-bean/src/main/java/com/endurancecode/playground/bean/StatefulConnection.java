@@ -1,6 +1,6 @@
-package com.endurancecode.playground.beans;
+package com.endurancecode.playground.bean;
 
-import com.endurancecode.playground.stateless.LibrarySessionBeanRemote;
+import com.endurancecode.playground.bean.stateful.LibraryStatefulSessionBeanRemote;
 import com.endurancecode.playground.ui.UIGenerator;
 import java.io.BufferedReader;
 import java.util.List;
@@ -8,23 +8,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.InitialContext;
 
-public final class StatelessConnection {
+public final class StatefulConnection {
 
-    private static final Logger LOGGER = Logger.getLogger(StatelessConnection.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(StatefulConnection.class.getName());
 
-    private static final String JNDI_NAME_STATELESS_BEAN = "ejb:/ejb-library/LibrarySessionBean!com.endurancecode.playground.stateless.LibrarySessionBeanRemote";
-    private static final String BEAN_TYPE = "Stateless EJB";
+    private static final String JNDI_NAME_STATEFUL_BEAN = "ejb:/ejb-library/LibraryStatefulSessionBean!com.endurancecode.playground.bean.stateful.LibraryStatefulSessionBeanRemote";
+    private static final String BEAN_TYPE = "Stateful EJB";
 
-    private StatelessConnection() {
+    private StatefulConnection() {
         super();
     }
 
-    public static void testStatelessEjbConnection(InitialContext context, BufferedReader reader) {
+    public static void testStatefulEjbConnection(InitialContext context, BufferedReader reader) {
         try {
             int choice;
 
-            LibrarySessionBeanRemote libraryBeanFirstLookup = (LibrarySessionBeanRemote) context.lookup(
-                    JNDI_NAME_STATELESS_BEAN);
+            LibraryStatefulSessionBeanRemote libraryBeanFirstLookup = (LibraryStatefulSessionBeanRemote) context.lookup(
+                    JNDI_NAME_STATEFUL_BEAN);
 
             while (true) {
                 UIGenerator.showUI(BEAN_TYPE);
@@ -46,16 +46,16 @@ public final class StatelessConnection {
             List<String> booksFromFirstLookup = libraryBeanFirstLookup.getBooks();
             UIGenerator.listBooks(booksFromFirstLookup, true);
 
-            LibrarySessionBeanRemote libraryBeanSecondLookup = (LibrarySessionBeanRemote) context.lookup(
-                    JNDI_NAME_STATELESS_BEAN);
+            LibraryStatefulSessionBeanRemote libraryBeanSecondLookup = (LibraryStatefulSessionBeanRemote) context.lookup(
+                    JNDI_NAME_STATEFUL_BEAN);
             List<String> booksFromSecondLookup = libraryBeanSecondLookup.getBooks();
 
             System.out.println(UIGenerator.generateUiSeparator(UIGenerator.UI_SCREEN_WIDTH));
-            System.out.println("Using second lookup to get library stateless object");
+            System.out.println("Using second lookup to get library stateful object");
             UIGenerator.listBooks(booksFromSecondLookup, false);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
-            LOGGER.log(Level.SEVERE, "Exception occurred in testStatelessEjbConnection", exception);
+            LOGGER.log(Level.SEVERE, "Exception occurred in testStatefulEjbConnection", exception);
         }
     }
 }

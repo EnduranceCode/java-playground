@@ -1,7 +1,8 @@
 package com.endurancecode.playground;
 
-import com.endurancecode.playground.beans.StatefulConnection;
-import com.endurancecode.playground.beans.StatelessConnection;
+import com.endurancecode.playground.bean.PersistenceConnection;
+import com.endurancecode.playground.bean.StatefulConnection;
+import com.endurancecode.playground.bean.StatelessConnection;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -51,6 +52,7 @@ public class EJBClient {
         try {
             StatelessConnection.testStatelessEjbConnection(context, bufferedConsoleReader);
             StatefulConnection.testStatefulEjbConnection(context, bufferedConsoleReader);
+            PersistenceConnection.testPersistenceEjbConnection(context, bufferedConsoleReader);
         } finally {
             if (bufferedConsoleReader != null) {
                 try {

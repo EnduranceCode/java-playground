@@ -19,7 +19,7 @@ available at [Tutorials Point](https://www.tutorialspoint.com/).
 - [x] EJB - Create Application | tag: `EJBT-L04`
 - [x] EJB - Stateless Bean | tag: `EJBT-L05`
 - [x] EJB - Stateful Bean | tag: `EJBT-L06`
-- [ ] EJB - Persistence
+- [x] EJB - Persistence | tag: `EJBT-L07`
 - [ ] EJB - Message Driven Beans
 - [ ] EJB - Annotations
 - [ ] EJB - Callbacks
@@ -91,3 +91,10 @@ executing the below command in the [`ejb-app`](./ejb-app) folder:
 ```bash
 ./deploy.sh
 ```
+
+### Deployment tasks for the EJB Persistence lesson
+
+Before deploying the application, after creating the `LibraryPersistenceSessionBean` (**EJB Persistence** lesson with the
+git tag `EJBT-L07`), you must create the `books` table in the PostgreSQL database. To do this, connect to the PostgreSQL
+server and execute the SQL script located in the [`db-scripts`](./ejb-app/library-bean/src/main/resources/db-scripts)
+folder of the `library-bean` resources.
