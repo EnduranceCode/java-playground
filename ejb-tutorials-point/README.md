@@ -48,6 +48,10 @@ available at [Tutorials Point](https://www.tutorialspoint.com/).
 The folder [`dev-environment`](./dev-environment) contains the Docker environment setup required to run both
 the application server and the PostgreSQL database server needed for the tutorial's development environment.
 
+The WildFly server debug port is exposed and mapped to host port `${WILDFLY_DEBUG_PORT}`, allowing you to connect
+a debugger to the application server if needed. The [`.run`](./ejb-app/.run) folder contains the IntelliJ IDEA
+run configuration for connecting the debugger to the WildFly server.
+
 ### ejb-app
 
 The folder [`ejb-app`](./ejb-app) contains the EJB modules developed while following the tutorial and the script

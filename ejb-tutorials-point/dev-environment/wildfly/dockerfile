@@ -93,5 +93,6 @@ RUN rm -rf /tmp/postgres
 # Clean up the WildFly standalone_xml_history to avoid issues with configuration changes
 RUN rm -rf ${WILDFLY_HOME}/standalone/configuration/standalone_xml_history/current/*
 
+ENV JAVA_OPTS="${JAVA_OPTS} -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8787"
 ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -b=0.0.0.0 -bmanagement=0.0.0.0 -c standalone-full.xml
-EXPOSE 8080 9990
+EXPOSE 8080 9990 8787
