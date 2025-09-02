@@ -21,7 +21,7 @@ available at [Tutorials Point](https://www.tutorialspoint.com/).
 - [x] EJB - Stateful Bean | tag: `EJBT-L06`
 - [x] EJB - Persistence | tag: `EJBT-L07`
 - [x] EJB - Message Driven Beans | tag: `EJBT-L08`
-- [ ] EJB - Annotations
+- [x] EJB - Annotations | tag: `EJBT-L09`
 - [ ] EJB - Callbacks
 - [ ] EJB - Timer Service
 - [ ] EJB - Dependency Injection
