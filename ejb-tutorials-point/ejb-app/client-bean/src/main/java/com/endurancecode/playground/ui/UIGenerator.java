@@ -11,14 +11,32 @@ public final class UIGenerator {
     private static final String UI_WHITE_SPACE = " ";
     private static final String UI_VERTICAL_CHAR = "|";
     private static final String UI_SEPARATOR_CHAR = "-";
-    private static final String UI_HEADER = "Welcome to Book Store";
+    private static final String UI_APP_HEADER = "EJB Connection Test Menu";
+    private static final String UI_LIBRARY_HEADER = "Welcome to Book Store";
     public static final String UI_BOOK_PROMPT = "Enter book name: ";
     public static final String UI_INVALID_CHOICE = "Invalid choice. Please try again.";
 
+    public static void showConnectionsMenu() {
+        String header = String.join(
+                UI_WHITE_SPACE, UI_VERTICAL_CHAR, UI_APP_HEADER,
+                generateUiSpaces(UI_SCREEN_WIDTH - UI_LIBRARY_HEADER.length() - 8), UI_VERTICAL_CHAR
+        );
+        String options = String.join(
+                UI_LINE_BREAK, "Options".concat(UI_LINE_BREAK), UI_TAB.concat("1. Test Stateless EJB Connection"),
+                UI_TAB.concat("2. Test Stateful EJB Connection"), UI_TAB.concat("3. Test Persistence EJB Connection"),
+                UI_TAB.concat("4. Test Message Driven EJB Connection"), UI_LINE_BREAK.concat("Enter Choice: ")
+        );
+
+        System.out.println(generateUiSeparator(UI_SCREEN_WIDTH));
+        System.out.println(header);
+        System.out.println(generateUiSeparator(UI_SCREEN_WIDTH).concat(UI_LINE_BREAK));
+        System.out.print(options);
+    }
+
     public static void showUI(String beanType) {
         String header = String.join(
-                UI_WHITE_SPACE, UI_VERTICAL_CHAR, UI_HEADER, UI_SEPARATOR_CHAR, beanType,
-                generateUiSpaces(UI_SCREEN_WIDTH - UI_HEADER.length() - beanType.length() - 8), UI_VERTICAL_CHAR
+                UI_WHITE_SPACE, UI_VERTICAL_CHAR, UI_LIBRARY_HEADER, UI_SEPARATOR_CHAR, beanType,
+                generateUiSpaces(UI_SCREEN_WIDTH - UI_LIBRARY_HEADER.length() - beanType.length() - 8), UI_VERTICAL_CHAR
         );
         String options = String.join(
                 UI_LINE_BREAK, "Options".concat(UI_LINE_BREAK), UI_TAB.concat("1. Add Book"), UI_TAB.concat("2. Exit"),

@@ -20,7 +20,7 @@ available at [Tutorials Point](https://www.tutorialspoint.com/).
 - [x] EJB - Stateless Bean | tag: `EJBT-L05`
 - [x] EJB - Stateful Bean | tag: `EJBT-L06`
 - [x] EJB - Persistence | tag: `EJBT-L07`
-- [ ] EJB - Message Driven Beans
+- [x] EJB - Message Driven Beans | tag: `EJBT-L08`
 - [ ] EJB - Annotations
 - [ ] EJB - Callbacks
 - [ ] EJB - Timer Service
@@ -98,3 +98,22 @@ Before deploying the application, after creating the `LibraryPersistenceSessionB
 git tag `EJBT-L07`), you must create the `books` table in the PostgreSQL database. To do this, connect to the PostgreSQL
 server and execute the SQL script located in the [`db-scripts`](./ejb-app/library-bean/src/main/resources/db-scripts)
 folder of the `library-bean` resources.
+
+### Deployment tasks for the EJB Message Driven Beans lesson
+
+To be able to follow the **EJB - Message Driven Beans** lesson, you need to create a JMS queue on the WildFly server.
+To do this, connect to the Wildfly web console and navigate to the **Configuration** tab, then select **Subsystems** and
+then select the **Messaging-ActiveMQ** option. With the **Messaging ActiveMQ** selected, click the **Server** category.
+In the **Server** category, select the **Default** option, then click the **Destinations** tab and finally click
+the **View** button.
+
+On the new screen that is shown, select the **JMS Queue** option, on the sidebar, and then click the **Add** button
+to create the new JMS Queue. Fill the fields as follows:
+
+- **Name**: `BookQueue`
+- **Durable**: Leave checked (default ON)
+- **Selector**: Leave black
+- **Entries**: `java:/queue/BookQueue` and press enter to add the entry
+- **Entries**: `java:jboss/exported/jms/queue/BookQueue` and press enter again to add a second entry
+
+Then click the **Save** button to create the JMS Queue.

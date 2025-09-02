@@ -1,8 +1,10 @@
 package com.endurancecode.playground;
 
+import com.endurancecode.playground.bean.MessageConnection;
 import com.endurancecode.playground.bean.PersistenceConnection;
 import com.endurancecode.playground.bean.StatefulConnection;
 import com.endurancecode.playground.bean.StatelessConnection;
+import com.endurancecode.playground.ui.UIGenerator;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -49,10 +51,34 @@ public class EJBClient {
     }
 
     private void testEjbConnections() {
+        int choice;
+
+        UIGenerator.showConnectionsMenu();
+
         try {
-            StatelessConnection.testStatelessEjbConnection(context, bufferedConsoleReader);
-            StatefulConnection.testStatefulEjbConnection(context, bufferedConsoleReader);
-            PersistenceConnection.testPersistenceEjbConnection(context, bufferedConsoleReader);
+            String strChoice = bufferedConsoleReader.readLine();
+            choice = Integer.parseInt(strChoice);
+
+            switch (choice) {
+                case 1:
+                    StatelessConnection.testStatelessEjbConnection(context, bufferedConsoleReader);
+                    break;
+                case 2:
+                    StatefulConnection.testStatefulEjbConnection(context, bufferedConsoleReader);
+                    break;
+                case 3:
+                    PersistenceConnection.testPersistenceEjbConnection(context, bufferedConsoleReader);
+                    break;
+                case 4:
+                    MessageConnection.testMessageEjbConnection(context, bufferedConsoleReader);
+                    break;
+                default:
+                    System.out.println("Exiting application.");
+                    System.exit(0);
+            }
+        } catch (IOException exception) {
+            System.out.println(exception.getMessage());
+            LOGGER.log(Level.SEVERE, "Exception occurred in testEjbConnections", exception);
         } finally {
             if (bufferedConsoleReader != null) {
                 try {
