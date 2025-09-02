@@ -5,6 +5,7 @@ FROM quay.io/wildfly/wildfly:${WILDFLY_VERSION}
 # These arguments must be declared here because arguments declared before the FROM command are only available
 # up to the FROM command execution (except when used with the FROM command)
 ARG WILDFLY_POSTGRES_DRIVER
+ARG WILDFLY_HTTP_PORT
 ARG WILDFLY_ADMIN_USERNAME
 ARG WILDFLY_APP_USERNAME
 ARG WILDFLY_PASSWORD
@@ -18,6 +19,7 @@ ENV WILDFLY_HOME=/opt/jboss/wildfly
 ENV DEPLOYMENT_DIR=${WILDFLY_HOME}/standalone/deployments/
 ENV CONFIGURATION_DIR=${WILDFLY_HOME}/standalone/configuration
 ENV WILDFLY_POSTGRES_DRIVER=${WILDFLY_POSTGRES_DRIVER}
+ENV WILDFLY_HTTP_PORT=${WILDFLY_HTTP_PORT}
 ENV WILDFLY_ADMIN_USERNAME=${WILDFLY_ADMIN_USERNAME}
 ENV WILDFLY_APP_USERNAME=${WILDFLY_APP_USERNAME}
 ENV WILDFLY_PASSWORD=${WILDFLY_PASSWORD}
@@ -45,29 +47,33 @@ RUN update-ca-trust enable && update-ca-trust extract
 # Clean up the temporary certificates folder
 RUN rm -rf /tmp/certificates
 
-# Create a temporary folder to hold the PostgreSQL JDBC driver, module.xml, and add-datasource.cli files
-RUN mkdir -p /tmp/postgres
+# Create a temporary folder to hold the configuration files
+RUN mkdir -p /tmp/configuration
 
 # Download PostgreSQL JDBC driver
-RUN curl -L -o /tmp/postgres/postgresql.jar https://jdbc.postgresql.org/download/${WILDFLY_POSTGRES_DRIVER}
+RUN curl -L -o /tmp/configuration/postgresql.jar https://jdbc.postgresql.org/download/${WILDFLY_POSTGRES_DRIVER}
 
-# Copy the module.xml and add-datasource.cli files to the /tmp/postgres folder
-COPY configuration/module.xml /tmp/postgres/module.xml
-COPY configuration/add-datasource.cli /tmp/postgres/add-datasource.cli
+# Copy the configuration files to the /tmp/configuration folder
+COPY configuration/module.xml /tmp/configuration/module.xml
+COPY configuration/add-datasource.cli /tmp/configuration/add-datasource.cli
+COPY configuration/jms-configuration.cli /tmp/configuration/jms-configuration.cli
 
 # Replace placeholders in the add-datasource.cli file with actual values from build arguments
-RUN sed -i "s/{POSTGRES_CONTAINER_NAME}/${POSTGRES_CONTAINER_NAME}/g" /tmp/postgres/add-datasource.cli && \
-    sed -i "s/{POSTGRES_DB}/${POSTGRES_DB}/g" /tmp/postgres/add-datasource.cli && \
-    sed -i "s/{POSTGRES_USER}/${POSTGRES_USER}/g" /tmp/postgres/add-datasource.cli && \
-    sed -i "s/{POSTGRES_PASSWORD}/${POSTGRES_PASSWORD}/g" /tmp/postgres/add-datasource.cli
+RUN sed -i "s/{POSTGRES_CONTAINER_NAME}/${POSTGRES_CONTAINER_NAME}/g" /tmp/configuration/add-datasource.cli && \
+    sed -i "s/{POSTGRES_DB}/${POSTGRES_DB}/g" /tmp/configuration/add-datasource.cli && \
+    sed -i "s/{POSTGRES_USER}/${POSTGRES_USER}/g" /tmp/configuration/add-datasource.cli && \
+    sed -i "s/{POSTGRES_PASSWORD}/${POSTGRES_PASSWORD}/g" /tmp/configuration/add-datasource.cli
+
+# Replace placeholders in the configure-jms file with actual values from build arguments
+RUN sed -i "s/WILDFLY_HTTP_PORT/${WILDFLY_HTTP_PORT}/g" /tmp/configuration/jms-configuration.cli
 
 # Create WildFly module for PostgreSQL driver
 RUN mkdir -p ${WILDFLY_HOME}/modules/org/postgresql/main && \
-    cp /tmp/postgres/postgresql.jar ${WILDFLY_HOME}/modules/org/postgresql/main/ && \
-    cp /tmp/postgres/module.xml ${WILDFLY_HOME}/modules/org/postgresql/main/module.xml
+    cp /tmp/configuration/postgresql.jar ${WILDFLY_HOME}/modules/org/postgresql/main/ && \
+    cp /tmp/configuration/module.xml ${WILDFLY_HOME}/modules/org/postgresql/main/module.xml
 
 # Set permissions to allow the jboss user to access the WildFly installation and configuration files
-RUN chown -R jboss:jboss /tmp/postgres && \
+RUN chown -R jboss:jboss /tmp/configuration && \
   chown -R jboss:jboss /${WILDFLY_HOME} && \
   chmod -R g+rwX ${WILDFLY_HOME} && \
   chmod ug+x ${WILDFLY_HOME}/bin/standalone.sh && \
@@ -77,7 +83,7 @@ RUN chown -R jboss:jboss /tmp/postgres && \
 USER jboss
 
 # Execute the add-datasource.cli script to add the PostgreSQL datasource to WildFly configuration
-RUN ${WILDFLY_HOME}/bin/jboss-cli.sh --file=/tmp/postgres/add-datasource.cli
+RUN ${WILDFLY_HOME}/bin/jboss-cli.sh --file=/tmp/configuration/add-datasource.cli
 
 # Add the WildFly administration user using the provided build arguments, using the --silent option
 # to avoid interactive prompt (the user will be added to the ManagementRealm)
@@ -85,10 +91,13 @@ RUN ${WILDFLY_HOME}/bin/add-user.sh -u ${WILDFLY_ADMIN_USERNAME} -p ${WILDFLY_PA
 
 # Add the WildFly administration user using the provided build arguments, using the --silent option
 # to avoid interactive prompt (the user will be added to the ApplicationRealm)
-RUN ${WILDFLY_HOME}/bin/add-user.sh -a -u ${WILDFLY_APP_USERNAME} -p ${WILDFLY_PASSWORD} --silent
+RUN ${WILDFLY_HOME}/bin/add-user.sh -a -u ${WILDFLY_APP_USERNAME} -p ${WILDFLY_PASSWORD} -g guest --silent
 
-# Clean up the temporary postgres folder
-RUN rm -rf /tmp/postgres
+# Execute the JMS configuration script
+RUN ${WILDFLY_HOME}/bin/jboss-cli.sh --file=/tmp/configuration/jms-configuration.cli
+
+# Clean up the temporary configuration folder
+RUN rm -rf /tmp/configuration
 
 # Clean up the WildFly standalone_xml_history to avoid issues with configuration changes
 RUN rm -rf ${WILDFLY_HOME}/standalone/configuration/standalone_xml_history/current/*
