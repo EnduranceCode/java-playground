@@ -38,6 +38,12 @@ The folder [`ejb-tutorials-point`](./ejb-tutorials-point/) contains the code wri
 the [EJB Tutorial](https://www.tutorialspoint.com/ejb/index.htm)
 available at [Tutorials Point](https://www.tutorialspoint.com/).
 
+### Java Multithreading, Concurrency & Performance Optimization
+
+The folder [`java-multithreading-concurrency`](./java-multithreading-concurrency) the examples and code for the
+[Java Multithreading, Concurrency & Performance Optimization](https://www.udemy.com/course/java-multithreading-concurrency-performance-optimization/)
+course, created by [Michael Pogrebinsky](https://www.linkedin.com/in/michaelpog).
+
 ### Unit Tests
 
 The folder [`unit-tests`](./unit-tests/) contains the code written following tutorials and courses about **Unit Tests**.
