@@ -8,18 +8,18 @@ course, created by [Michael Pogrebinsky](https://www.linkedin.com/in/michaelpog)
 
 ### Section 1: Introduction
 
-+ [ ] Motivation & Operating Systems fundamentals - Part 1
-+ [ ] Operating Systems Fundamentals - Part 2
-+ [ ] Quiz 1: Threading and Operating Systems Fundamentals Quiz
++ [x] Motivation & Operating Systems fundamentals - Part 1
++ [x] Operating Systems Fundamentals - Part 2
++ [x] Quiz 1: Threading and Operating Systems Fundamentals Quiz
 
 ### Section 2: Threading fundamentals - Thread Creation
 
-+ [ ] Tips about Coding Lectures and Debugging Instructions
-+ [ ] Threads Creation - Part 1, Thread Capabilities & Debugging
-+ [ ] Threads Creation - Part 2. Thread Inheritance
-+ [ ] Quiz 2: Thread Creation
-+ [ ] Coding Exercise 1: Thread Creation - MultiExecutor
-+ [ ] Thread Creation - MultiExecutor Solution
++ [x] Tips about Coding Lectures and Debugging Instructions
++ [x] Threads Creation - Part 1, Thread Capabilities & Debugging
++ [x] Threads Creation - Part 2. Thread Inheritance
++ [x] Quiz 2: Thread Creation
++ [x] Coding Exercise 1: Thread Creation - MultiExecutor
++ [x] Thread Creation - MultiExecutor Solution
 
 ### Section 3: Threading fundamentals - Thread Coordination
 
