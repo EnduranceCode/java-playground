@@ -23,39 +23,39 @@ course, created by [Michael Pogrebinsky](https://www.linkedin.com/in/michaelpog)
 
 ### Section 3: Threading fundamentals - Thread Coordination
 
-+ [ ] Thread Termination & Daemon Threads
-+ [ ] Quiz 3: Thread Termination & Daemon Threads
-+ [ ] Joining Threads
-+ [ ] Coding Exercise 2: Multithreaded Calculation
-+ [ ] Multithreaded Calculation - Solution
++ [x] Thread Termination & Daemon Threads
++ [x] Quiz 3: Thread Termination & Daemon Threads
++ [x] Joining Threads
++ [x] Coding Exercise 2: Multithreaded Calculation
++ [x] Multithreaded Calculation - Solution
 
 ### Section 4: Performance Optimization
 
-+ [ ] Introduction to Performance & Optimizing for Latency - Part 1
-+ [ ] Optimizing for Latency Part 2 - Image Processing
-+ [ ] Additional Resource - Image Processing, Color Spaces, Extraction & Manipulation
-+ [ ] Optimizing for Throughput Part 1
-+ [ ] Optimizing for Throughput Part 2 - HTTP server + Jmeter
-+ [ ] Quiz 4: Performance Optimization
++ [x] Introduction to Performance & Optimizing for Latency - Part 1
++ [x] Optimizing for Latency Part 2 - Image Processing
++ [x] Additional Resource - Image Processing, Color Spaces, Extraction & Manipulation
++ [x] Optimizing for Throughput Part 1
++ [x] Optimizing for Throughput Part 2 - HTTP server + Jmeter
++ [x] Quiz 4: Performance Optimization
 
 ### Section 5: Data Sharing between Threads
 
-+ [ ] Stack & Heap Memory Regions
-+ [ ] Quiz 5: Stack & Heap Memory Regions
-+ [ ] Resource Sharing & Introduction to Critical Sections
++ [x] Stack & Heap Memory Regions
++ [x] Quiz 5: Stack & Heap Memory Regions
++ [x] Resource Sharing & Introduction to Critical Sections
 
 ### Section 6: The Concurrency Challenges & Solutions
 
-+ [ ] Critical Section & Synchronization
-+ [ ] Quiz 6: Critical Section & Synchronization
-+ [ ] Atomic Operations, Volatile & Metrics practical example
-+ [ ] Quiz 7: Atomic Operations, Volatile & Metrics practical example
-+ [ ] Coding Exercise 3: Min - Max Metrics
-+ [ ] Min - Max Metrics - Solution
-+ [ ] Race Conditions & Data Races
-+ [ ] Quiz 8: Data Races
-+ [ ] Locking Strategies & Deadlocks
-+ [ ] Quiz 9: Locking Strategies & Deadlocks
++ [x] Critical Section & Synchronization
++ [x] Quiz 6: Critical Section & Synchronization
++ [x] Atomic Operations, Volatile & Metrics practical example
++ [x] Quiz 7: Atomic Operations, Volatile & Metrics practical example
++ [x] Coding Exercise 3: Min - Max Metrics
++ [x] Min - Max Metrics - Solution
++ [x] Race Conditions & Data Races
++ [x] Quiz 8: Data Races
++ [x] Locking Strategies & Deadlocks
++ [x] Quiz 9: Locking Strategies & Deadlocks
 
 ### Section 7: Advanced Locking
 
