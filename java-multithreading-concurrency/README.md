@@ -59,23 +59,23 @@ course, created by [Michael Pogrebinsky](https://www.linkedin.com/in/michaelpog)
 
 ### Section 7: Advanced Locking
 
-+ [ ] ReentrantLock Part 1 - tryLock and interruptible Lock
-+ [ ] ReentrantLock Part 2 - User Interface Application example
-+ [ ] Quiz 10: ReentrantLock
-+ [ ] Reentrant Read Write Lock & Database Implementation
-+ [ ] Quiz 11: Read-Write Locks
-+ [ ] Coding Exercise 4: Product Reviews Service
-+ [ ] Product Reviews Service - Solution
++ [x] ReentrantLock Part 1 - tryLock and interruptible Lock
++ [x] ReentrantLock Part 2 - User Interface Application example
++ [x] Quiz 10: ReentrantLock
++ [x] Reentrant Read Write Lock & Database Implementation
++ [x] Quiz 11: Read-Write Locks
++ [x] Coding Exercise 4: Product Reviews Service
++ [x] Product Reviews Service - Solution
 
 ### Section 8: Inter-Thread Communication
 
-+ [ ] Semaphore - Scalable Producer Consumer implementation
-+ [ ] Quiz 12: Semaphores - Barrier
-+ [ ] Condition Variables - All purpose, Inter-Thread Communication
-+ [ ] Objects as Condition Variables - wait(), notify() and notifyAll()
-+ [ ] Quiz 13: Condition Variables
-+ [ ] Coding Exercise 5: Simple CountDownLatch
-+ [ ] Simple CountDownLatch - Solution
++ [x] Semaphore - Scalable Producer Consumer implementation
++ [x] Quiz 12: Semaphores - Barrier
++ [x] Condition Variables - All purpose, Inter-Thread Communication
++ [x] Objects as Condition Variables - wait(), notify() and notifyAll()
++ [x] Quiz 13: Condition Variables
++ [x] Coding Exercise 5: Simple CountDownLatch
++ [x] Simple CountDownLatch - Solution
 
 ### Section 9: Lock-Free Algorithms, Data-Structures & Techniques
 
