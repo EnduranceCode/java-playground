@@ -79,10 +79,10 @@ course, created by [Michael Pogrebinsky](https://www.linkedin.com/in/michaelpog)
 
 ### Section 9: Lock-Free Algorithms, Data-Structures & Techniques
 
-+ [ ] Introduction to Non-blocking, Lock Free operations
-+ [ ] Atomic Integers & Lock Free E-Commerce
-+ [ ] Atomic References, Compare And Set, Lock-Free High Performance Data Structure
-+ [ ] Quiz 14: Lock-Free Algorithms, Data-structures & Techniques
++ [x] Introduction to Non-blocking, Lock Free operations
++ [x] Atomic Integers & Lock Free E-Commerce
++ [x] Atomic References, Compare And Set, Lock-Free High Performance Data Structure
++ [x] Quiz 14: Lock-Free Algorithms, Data-structures & Techniques
 
 ### Section 10: Threading Models for High Performance IO
 
