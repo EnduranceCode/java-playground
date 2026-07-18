@@ -86,10 +86,10 @@ course, created by [Michael Pogrebinsky](https://www.linkedin.com/in/michaelpog)
 
 ### Section 10: Threading Models for High Performance IO
 
-+ [ ] Introduction to Blocking IO
-+ [ ] Thread Per Task / Thread Per Request Model
-+ [ ] Asynchronous, Non Blocking IO with Thread Per Core Model
-+ [ ] Quiz 15: Threading Models for High Performance IO - Quiz
++ [x] Introduction to Blocking IO
++ [x] Thread Per Task / Thread Per Request Model
++ [x] Asynchronous, Non Blocking IO with Thread Per Core Model
++ [x] Quiz 15: Threading Models for High Performance IO - Quiz
 
 ### Section 11: Virtual Threads and High-Performance IO
 
