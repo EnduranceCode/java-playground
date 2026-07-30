@@ -24,6 +24,12 @@ The folder [`programming-masterclass`](./programming-masterclass/) contains the 
 
 The folder [`exam-1z0-811`](./exam-1z0-811) contains the code written while studying for the [Java Foundations Exam 1Z0-811](https://education.oracle.com/java-foundations/pexam_1Z0-811).
 
+### SOLID Principles in Java Application Development
+
+The folder [`solid-principles-java-application-development`](./solid-principles-java-application-development) is used
+to track progress while taking the course [SOLID Principles in Java Application Development](https://www.udemy.com/course/solid-principles-in-java-application-development/),
+created by [Arun Ammasai](https://www.linkedin.com/in/arunammasai/).
+
 ### Oracle's Getting Started with JavaFX Tutorials
 
 The folder [`javafx-oracle`](./javafx-oracle/) contains the code written while following the tutorials [Getting Started with JavaFX](https://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm) created by [Oracle](https://www.oracle.com).
