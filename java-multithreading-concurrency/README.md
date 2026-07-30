@@ -93,12 +93,12 @@ course, created by [Michael Pogrebinsky](https://www.linkedin.com/in/michaelpog)
 
 ### Section 11: Virtual Threads and High-Performance IO
 
-+ [ ] Introduction to Virtual Threads
-+ [ ] High Performance IO with Virtual Threads
-+ [ ] Virtual Threads Best Practices
-+ [ ] Quiz 16: Virtual Threads and High-Performance IO
++ [x] Introduction to Virtual Threads
++ [x] High Performance IO with Virtual Threads
++ [x] Virtual Threads Best Practices
++ [x] Quiz 16: Virtual Threads and High-Performance IO
 
 ### Section 12: Beyond Multithreading - Final Lecture
 
-+ [ ] Distributed Systems, Big Data & Performance
-+ [ ] Bonus Lecture - Keep Learning
++ [x] Distributed Systems, Big Data & Performance
++ [x] Bonus Lecture - Keep Learning
