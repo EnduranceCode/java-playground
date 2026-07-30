@@ -4,6 +4,10 @@ The examples and code for the
 [Java Multithreading, Concurrency & Performance Optimization](https://www.udemy.com/course/java-multithreading-concurrency-performance-optimization/)
 course, created by [Michael Pogrebinsky](https://www.linkedin.com/in/michaelpog), is stored in [this](.) folder.
 
+## Course Certificate
+
+![java-multithreading-concurrency-performance-optimization-certificate.jpg](certificates/java-multithreading-concurrency-performance-optimization-certificate.jpg)
+
 ## Course Content
 
 ### Section 1: Introduction
