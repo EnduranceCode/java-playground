@@ -72,6 +72,12 @@ work while taking the course [GoF Design Patterns - Complete Course with Java Ex
 created by [Andrii Piatakha](https://www.linkedin.com/in/andrii-piatakha/) and
 [Learn IT University](https://www.udemy.com/user/learn-it-university/).
 
+### LeetCode in Java: Algorithms Coding Interview Questions
+
+The folder [`leetcode-java-algorithms-interview`](./leetcode-java-algorithms-interview/) is used to track
+progress and store course work while taking the course [LeetCode in Java: Algorithms Coding Interview Questions](https://www.udemy.com/course/leetcode-coding-interview-question-solution-explanation/),
+created by [Md. A. Barik](https://www.udemy.com/user/abdul-barik-3/).
+
 ### Oracle's Getting Started with JavaFX Tutorials
 
 The folder [`javafx-oracle`](./javafx-oracle/) contains the code written while following the tutorials [Getting Started with JavaFX](https://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm) created by [Oracle](https://www.oracle.com).
