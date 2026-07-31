@@ -30,16 +30,16 @@ created by [Arun Ammasai](https://www.linkedin.com/in/arunammasai/).
 
 ### Section 5: ISP - Interface Segregate Principle
 
-- [ ] 11 - Interface Segregate Principle Introduction
-- [ ] 12 - Interface Segregate Principle Problem
-- [ ] 13 - Interface Segregate Principle Solution
+- [x] 11 - Interface Segregate Principle Introduction
+- [x] 12 - Interface Segregate Principle Problem
+- [x] 13 - Interface Segregate Principle Solution
 
 ### Section 6: DIP - Dependency Inversion Principle Introduction
 
-- [ ] 14 - Dependency Inversion Principle Introduction
-- [ ] 15 - Dependency Inversion Principle Problem
-- [ ] 16 - Dependency Inversion Principle Solution
+- [x] 14 - Dependency Inversion Principle Introduction
+- [x] 15 - Dependency Inversion Principle Problem
+- [x] 16 - Dependency Inversion Principle Solution
 
 ### Section 7: Thank You !!!
 
-- [ ] 17 - Thank You
+- [x] 17 - Thank You
