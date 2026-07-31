@@ -50,6 +50,13 @@ store course work while taking the course [Java Collections Framework + Generics
 created by [Andrii Piatakha](https://www.linkedin.com/in/andrii-piatakha/) and
 [Learn IT University](https://www.udemy.com/user/learn-it-university/).
 
+### Functional Programming + Lambdas, Method References, Streams
+
+The folder [`functional-programming-learnit`](./functional-programming-learnit/) is used to track progress and store
+course work while taking the course [Functional Programming + Lambdas, Method References, Streams](https://www.udemy.com/course/functional-programming-learnit/),
+created by [Andrii Piatakha](https://www.linkedin.com/in/andrii-piatakha/) and
+[Learn IT University](https://www.udemy.com/user/learn-it-university/).
+
 ### Oracle's Getting Started with JavaFX Tutorials
 
 The folder [`javafx-oracle`](./javafx-oracle/) contains the code written while following the tutorials [Getting Started with JavaFX](https://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm) created by [Oracle](https://www.oracle.com).
