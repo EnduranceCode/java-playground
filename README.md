@@ -30,6 +30,13 @@ The folder [`solid-principles-java-application-development`](./solid-principles-
 to track progress while taking the course [SOLID Principles in Java Application Development](https://www.udemy.com/course/solid-principles-in-java-application-development/),
 created by [Arun Ammasai](https://www.linkedin.com/in/arunammasai/).
 
+### Object Oriented Programming - Basics to Advance (Java OOP)
+
+The folder [`oop-basics-to-advance`](./oop-basics-to-advance/) is used to track progress and store
+course work while taking the course [Object Oriented Programming - Basics to Advance (Java OOP)](https://www.udemy.com/course/oop-learnit/),
+created by [Andrii Piatakha](https://www.linkedin.com/in/andrii-piatakha/) and
+[Learn IT University](https://www.udemy.com/user/learn-it-university/).
+
 ### Oracle's Getting Started with JavaFX Tutorials
 
 The folder [`javafx-oracle`](./javafx-oracle/) contains the code written while following the tutorials [Getting Started with JavaFX](https://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm) created by [Oracle](https://www.oracle.com).
