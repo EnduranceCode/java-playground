@@ -57,6 +57,14 @@ course work while taking the course [Functional Programming + Lambdas, Method Re
 created by [Andrii Piatakha](https://www.linkedin.com/in/andrii-piatakha/) and
 [Learn IT University](https://www.udemy.com/user/learn-it-university/).
 
+### Data Structures and Algorithms: Deep Dive Using Java
+
+The folder [`data-structures-algorithms-deep-dive`](./data-structures-algorithms-deep-dive/) is used to track progress
+and store course work while taking the course
+[Data Structures and Algorithms: Deep Dive Using Java](https://www.udemy.com/course/data-structures-and-algorithms-deep-dive-using-java/),
+created by [Tim Buchalka](https://www.timbuchalka.com), [Goran Lochert](https://www.udemy.com/user/jojo-rabbit/), and
+[Tim Buchalka's Learn Programming Academy](https://www.udemy.com/user/learn-programming-academy/).
+
 ### Oracle's Getting Started with JavaFX Tutorials
 
 The folder [`javafx-oracle`](./javafx-oracle/) contains the code written while following the tutorials [Getting Started with JavaFX](https://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm) created by [Oracle](https://www.oracle.com).
