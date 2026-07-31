@@ -43,6 +43,13 @@ The folder [`data-structures-java-noobs`](./data-structures-java-noobs/) is used
 course work while taking the course [Data Structures in Java for Noobs (Lite Edition)](https://www.udemy.com/course/data-structures-in-java-for-noobs-lite-edition-algorithms-beginners/),
 created by [Pedro Mercado](https://www.noobcoder.com/).
 
+### Java Collections Framework + Generics, Lambdas & Stream API
+
+The folder [`java-collections-framework-learnit`](./java-collections-framework-learnit/) is used to track progress and
+store course work while taking the course [Java Collections Framework + Generics, Lambdas & Stream API](https://www.udemy.com/course/java-collections-framework-learnit/),
+created by [Andrii Piatakha](https://www.linkedin.com/in/andrii-piatakha/) and
+[Learn IT University](https://www.udemy.com/user/learn-it-university/).
+
 ### Oracle's Getting Started with JavaFX Tutorials
 
 The folder [`javafx-oracle`](./javafx-oracle/) contains the code written while following the tutorials [Getting Started with JavaFX](https://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm) created by [Oracle](https://www.oracle.com).
