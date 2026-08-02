@@ -9,19 +9,19 @@ created by [Andrii Piatakha](https://www.linkedin.com/in/andrii-piatakha/) and
 
 ### Section 1: Introduction
 
-- [ ] 001 - Communication plan
-- [ ] 002 - Unlimited access to Learn-IT application for students
-- [ ] 003 - Tips to Improve Your Course Taking Experience
-- [ ] 004 - Additional Free Learning Materials to Use During the Course
-- [ ] 005 - Learn IT Bot - Your Free AI Learning Assistant
-- [ ] 006 - Free AI Bot for My Students Only - No Sign-Up, FREE, Just Practice
+- [x] 001 - Communication plan
+- [x] 002 - Unlimited access to Learn-IT application for students
+- [x] 003 - Tips to Improve Your Course Taking Experience
+- [x] 004 - Additional Free Learning Materials to Use During the Course
+- [x] 005 - Learn IT Bot - Your Free AI Learning Assistant
+- [x] 006 - Free AI Bot for My Students Only - No Sign-Up, FREE, Just Practice
 
 ### Section 2: OOP Basics
 
-- [ ] 007 - Object-oriented programming: Basics
-- [ ] 008 - Classes & Objects
-- [ ] 009 - Different types of Classes, Abstract keyword and Abstract classes
-- [ ] 010 - Interfaces
+- [x] 007 - Object-oriented programming: Basics
+- [x] 008 - Classes & Objects
+- [x] 009 - Different types of Classes, Abstract keyword and Abstract classes
+- [x] 010 - Interfaces
 
 ### Section 3: OOP Core Principles - Inheritance, Polymorphism, Encapsulation and Abstraction
 
