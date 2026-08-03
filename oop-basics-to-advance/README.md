@@ -25,21 +25,21 @@ created by [Andrii Piatakha](https://www.linkedin.com/in/andrii-piatakha/) and
 
 ### Section 3: OOP Core Principles - Inheritance, Polymorphism, Encapsulation and Abstraction
 
-- [ ] 011 - Inheritance
-- [ ] 012 - Polymorphism and final keyword
-- [ ] 013 - static keyword
-- [ ] 014 - Encapsulation
-- [ ] 015 - Object, JNI and Object class overview
-- [ ] 016 - Quiz: Object-oriented programming - Check yourself
+- [x] 011 - Inheritance
+- [x] 012 - Polymorphism and final keyword
+- [x] 013 - static keyword
+- [x] 014 - Encapsulation
+- [x] 015 - Object, JNI and Object class overview
+- [x] 016 - Quiz: Object-oriented programming - Check yourself
 
 ### Section 4: SOLID Principles
 
-- [ ] 017 - SOLID principles overview & Single Responsibility Principle
-- [ ] 018 - Open / Closed Principle
-- [ ] 019 - Liskov Substitution Principle
-- [ ] 020 - Interface Segregation Principle
-- [ ] 021 - Dependency Inversion Principle
-- [ ] 022 - Quiz: SOLID Principles - Check yourself
+- [x] 017 - SOLID principles overview & Single Responsibility Principle
+- [x] 018 - Open / Closed Principle
+- [x] 019 - Liskov Substitution Principle
+- [x] 020 - Interface Segregation Principle
+- [x] 021 - Dependency Inversion Principle
+- [x] 022 - Quiz: SOLID Principles - Check yourself
 
 ### Section 5: PRACTICE: Coding exercises to practice SOLID principles
 
