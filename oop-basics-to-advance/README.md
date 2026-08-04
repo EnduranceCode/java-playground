@@ -43,26 +43,37 @@ created by [Andrii Piatakha](https://www.linkedin.com/in/andrii-piatakha/) and
 
 ### Section 5: PRACTICE: Coding exercises to practice SOLID principles
 
-- [ ] 023 - Single Responsibility Principle: User Registration and Authentication Refactoring Exercise
-- [ ] 024 - Open / Closed Principle: Shape Refactoring Challenge
-- [ ] 025 - Liskov Substitution Principle: Square and Rectangle Refactoring Challenge
-- [ ] 026 - Interface Segregation Principle: Worker Refactoring Challenge
-- [ ] 027 - Dependency Inversion Principle: Car-Engine Refactoring Challenge
+- [x] Coding Exercise 01: Single Responsibility Principle: User Registration and Authentication Refactoring Exercise
+- [x] Coding Exercise 02: Open / Closed Principle: Shape Refactoring Challenge
+- [x] Coding Exercise 03: Liskov Substitution Principle: Square and Rectangle Refactoring Challenge
+- [x] Coding Exercise 04: Interface Segregation Principle: Worker Refactoring Challenge
+- [x] Coding Exercise 05: Dependency Inversion Principle: Car-Engine Refactoring Challenge
 
 ### Section 6: Methods
 
-- [ ] 028 - Methods in Java: Overview
-- [ ] 029 - Parameter Passing Mechanism in Java
-- [ ] 030 - Recursive methods
-- [ ] 031 - Variable Length Arguments
-- [ ] 032 - Homework review: Methods
-- [ ] 033 - Quiz: Methods in Java - Check yourself
+- [x] 023 - Methods in Java: Overview
+- [x] 024 - Parameter Passing Mechanism in Java
+- [x] 025 - Recursive methods
+- [x] 026 - Variable Length Arguments
+- [x] Coding Exercise 06: Find max int in array
+- [x] Coding Exercise 07: Draw empty rectangle
+- [x] Coding Exercise 08: Calculate Amount of Words
+- [x] Coding Exercise 09: Filter String array
+- [x] Coding Exercise 10: Rotate Matrix
+- [x] Coding Exercise 11: Extend Array
+- [x] Coding Exercise 12: Greatest Common Divisor
+- [x] Coding Exercise 13: Sum all digits in number
+- [x] Coding Exercise 14: String Processor
+- [x] Coding Exercise 15: Turn each first letter in the word to capital
+- [x] Coding Exercise 16: Convert decimal to Roman numbers and vice versa
+- [x] 027 - Homework review: Methods
+- [x] 028 - Quiz: Methods in Java - Check yourself
 
 ### Section 7: OOP Interview Preparation
 
-- [ ] 034 - How to be prepared for the interview?
-- [ ] 035 - Part 1: OOP Interview - Questions and Answers
-- [ ] 036 - Part 2: OOP Interview - Questions and Answers
+- [x] 029 - How to be prepared for the interview?
+- [x] 030 - Part 1: OOP Interview - Questions and Answers
+- [x] 031 - Part 2: OOP Interview - Questions and Answers
 
 ### Section 8: Practice: EXAM OOP & Object-Oriented e-Commerce console applications
 
